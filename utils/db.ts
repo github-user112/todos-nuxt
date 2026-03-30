@@ -18,5 +18,14 @@ export interface D1PreparedStatement {
  * 获取 Cloudflare D1 数据库实例
  */
 export function getDB(event: any): D1Database {
-  return event.context.cloudflare.env.DB;
+  const cf = event.context?.cloudflare
+  if (!cf) {
+    throw new Error('Cloudflare context not found - not running on Cloudflare?')
+  }
+  const db = cf.env?.DB
+  if (!db) {
+    const available = cf.env ? Object.keys(cf.env).join(', ') : 'env is undefined'
+    throw new Error(`D1 binding "DB" not found. Available bindings: ${available}`)
+  }
+  return db
 }
