@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "deploy": "echo 'deploy handled by Cloudflare Pages'",
     "pages:deploy": "wrangler pages deploy dist"
   },
   "dependencies": {
