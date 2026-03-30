@@ -41,18 +41,17 @@ export default defineEventHandler(async (event) => {
 
   try {
     const todosResult = await DB.prepare(`
-      SELECT DISTINCT t.id, t.text, t.date, t.repeat_type, t.repeat_interval, t.end_date, t.completed, t.user_id, t.next_date,
-             COALESCE(t.next_date, t.date) as display_date
+      SELECT DISTINCT t.id, t.text, t.date, t.repeat_type, t.repeat_interval, t.end_date, t.completed, t.user_id, t.next_date
       FROM todos t
       WHERE t.user_id = ? AND (
-        (COALESCE(t.next_date, t.date) BETWEEN ? AND ?) OR
+        (t.date BETWEEN ? AND ?) OR
         (t.repeat_type != 'none' AND t.date <= ? AND (t.end_date IS NULL OR t.end_date >= ?))
       ) AND (t.end_date IS NULL OR t.end_date >= ?)
       AND NOT EXISTS (
         SELECT 1 FROM completed_instances ci 
-        WHERE ci.todo_id = t.id AND ci.date = COALESCE(t.next_date, t.date)
+        WHERE ci.todo_id = t.id AND ci.date = t.date
       )
-      ORDER BY display_date, t.repeat_type, t.repeat_interval
+      ORDER BY t.date, t.repeat_type, t.repeat_interval
     `).bind(userId, startDate, endDate, endDate, startDate, startDate).all();
 
     const completedInstancesResult = await DB.prepare(`
