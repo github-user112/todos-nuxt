@@ -70,8 +70,8 @@ export default defineEventHandler(async (event) => {
       completedInstances: completedInstancesResult.results || [],
       deletedInstances: deletedInstancesResult.results || [],
     };
-  } catch (error) {
-    console.error('查询待办事项时出错:', error);
-    throw createError({ statusCode: 500, message: '查询待办事项失败' });
+  } catch (error: any) {
+    const detail = error?.message || String(error)
+    throw createError({ statusCode: 500, message: `D1 Error: ${detail}` });
   }
 });
