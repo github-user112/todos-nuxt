@@ -1,0 +1,10 @@
+name = "todos-nuxt"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = ".output"
+
+# D1 数据库配置
+# ⚠️ 请先在 Cloudflare 控制台创建 D1 数据库，然后填入下面的 database_id
+[[d1_databases]]
+binding = "DB"
+database_name = "todos_calendar_db"
+database_id = "YOUR_D1_DATABASE_ID_HERE"
