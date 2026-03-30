@@ -45,15 +45,18 @@ provide('holidayData', holidayData)
 const initializeUserId = () => {
   if (!import.meta.client) return
 
-  // 从 URL query 或 hash 中获取用户 ID
-  const urlParams = new URLSearchParams(window.location.search)
-  let uid = urlParams.get('uid')
+  // 优先从 URL hash 获取用户 ID（兼容老项目），其次从 query param，都没有则生成新的
+  let uid = window.location.hash.substring(1)
+
+  if (!uid) {
+    const urlParams = new URLSearchParams(window.location.search)
+    uid = urlParams.get('uid')
+  }
 
   if (!uid) {
     uid = generateHash()
-    // 更新 URL 但不刷新页面
-    const newUrl = `${window.location.pathname}?uid=${uid}${window.location.hash}`
-    window.history.replaceState(null, '', newUrl)
+    // 更新 URL hash（兼容老项目格式）
+    window.location.hash = uid
   }
 
   userId.value = uid
