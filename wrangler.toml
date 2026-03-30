@@ -6,5 +6,5 @@ pages_build_output_dir = ".output"
 # ⚠️ 请先在 Cloudflare 控制台创建 D1 数据库，然后填入下面的 database_id
 [[d1_databases]]
 binding = "DB"
-database_name = "todos_calendar_db"
-database_id = "YOUR_D1_DATABASE_ID_HERE"
+database_name = "calendar_db"
+database_id = "6dd2ed1b-2c5d-4dcf-9a78-b8b14e828516"
