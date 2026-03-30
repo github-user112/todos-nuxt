@@ -92,15 +92,22 @@ let touchStartY = 0
 
 // Calendar days computation
 const calendarDays = computed(() => {
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
+  // 用 currentDate 作为网格的基准日期（原版逻辑）
+  const gridDate = new Date(currentDate.value)
+  gridDate.setHours(0, 0, 0, 0)
 
-  const currentDayOfWeek = today.getDay()
+  // 真正的今天，用于高亮
+  const realToday = new Date()
+  realToday.setHours(0, 0, 0, 0)
+
+  // 找到当前周的周一
+  const currentDayOfWeek = gridDate.getDay()
   const offsetToMonday = currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1
-  const currentMonday = new Date(today)
-  currentMonday.setDate(today.getDate() - offsetToMonday)
+  const currentMonday = new Date(gridDate)
+  currentMonday.setDate(gridDate.getDate() - offsetToMonday)
   currentMonday.setHours(0, 0, 0, 0)
 
+  // 起始日期：当前周的周一往前推 1 周
   const startDate = new Date(currentMonday)
   startDate.setDate(startDate.getDate() - 7)
 
@@ -116,9 +123,9 @@ const calendarDays = computed(() => {
     const isCurrentMonth = month === currentMonth.value && year === currentYear.value
     const dateStr = formatDate(date)
     const isToday =
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
+      date.getDate() === realToday.getDate() &&
+      date.getMonth() === realToday.getMonth() &&
+      date.getFullYear() === realToday.getFullYear()
 
     result.push({
       dayNumber,

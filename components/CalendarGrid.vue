@@ -35,6 +35,7 @@
 </template>
 
 <script setup>
+// 注意：animation.css 已在 nuxt.config.ts 中全局引入，无需在此重复导入
 const props = defineProps({
   weekdays: { type: Array, required: true },
   calendarDays: { type: Array, required: true },
