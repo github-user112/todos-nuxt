@@ -30,7 +30,7 @@
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff;
   --badge-work-bg: #6366f1; --badge-work-text: #fff;
   --todo-item-bg: #f5f3ff; --todo-item-hover-bg: #ede5fe; --todo-item-border-left: #7c3aed;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #10b981;
+  --todo-item-completed-bg: #f3f1f7; --todo-item-completed-border-left: #c4b5fd;
   --todo-item-completed-text: #a78bfa;
   --preview-bg: #f5f3ff; --preview-border: #e9d5ff; --preview-text: #7c3aed;
   --preview-hover-bg: #ede9fe; --preview-hover-border: #c4b5fd;
@@ -66,7 +66,7 @@
   --weekday-header-weekend-color: #013475; --weekday-header-weekend-bg: #e8f0fa;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #013475; --badge-work-text: #fff;
   --todo-item-bg: #f4f7fb; --todo-item-hover-bg: #e8f0f8; --todo-item-border-left: #fe893a;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f0f3f8; --todo-item-completed-border-left: #94b0d4;
   --todo-item-completed-text: #7a96bf;
   --preview-bg: #f4f7fb; --preview-border: #c8d6ea; --preview-text: #013475;
   --preview-hover-bg: #edf1f8; --preview-hover-border: #94b0d4;
@@ -102,7 +102,7 @@
   --weekday-header-weekend-color: #943d5e; --weekday-header-weekend-bg: #fce8f0;
   --badge-rest-bg: #e55039; --badge-rest-text: #fff; --badge-work-bg: #2e4e8c; --badge-work-text: #fff;
   --todo-item-bg: #fdf5f9; --todo-item-hover-bg: #f8e8f0; --todo-item-border-left: #2e4e8c;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f8f2f5; --todo-item-completed-border-left: #dba4c0;
   --todo-item-completed-text: #bfa0b4;
   --preview-bg: #fdf5f9; --preview-border: #f0d0e0; --preview-text: #943d5e;
   --preview-hover-bg: #fce4ee; --preview-hover-border: #dba4c0;
@@ -138,7 +138,7 @@
   --weekday-header-weekend-color: #b85c18; --weekday-header-weekend-bg: #fef2e4;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #1E2F5A; --badge-work-text: #fff;
   --todo-item-bg: #fef8f2; --todo-item-hover-bg: #fceee0; --todo-item-border-left: #1E2F5A;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f8f4f0; --todo-item-completed-border-left: #d4a878;
   --todo-item-completed-text: #a8b4cc;
   --preview-bg: #fef0e2; --preview-border: #f0d8be; --preview-text: #d07030;
   --preview-hover-bg: #fde8d6; --preview-hover-border: #d4a878;
@@ -174,7 +174,7 @@
   --weekday-header-weekend-color: #c83e54; --weekday-header-weekend-bg: #fdf0e8;
   --badge-rest-bg: #dc2626; --badge-rest-text: #fff; --badge-work-bg: #b89e50; --badge-work-text: #fff;
   --todo-item-bg: #fdf8f0; --todo-item-hover-bg: #f8ede0; --todo-item-border-left: #EE566D;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f8f4f0; --todo-item-completed-border-left: #c8b898;
   --todo-item-completed-text: #b8a888;
   --preview-bg: #fdf0e4; --preview-border: #e8d8c0; --preview-text: #c83e54;
   --preview-hover-bg: #fde8d6; --preview-hover-border: #c8b898;
@@ -210,7 +210,7 @@
   --weekday-header-weekend-color: #0a4a85; --weekday-header-weekend-bg: #e4f0fa;
   --badge-rest-bg: #FF6863; --badge-rest-text: #fff; --badge-work-bg: #0F64B5; --badge-work-text: #fff;
   --todo-item-bg: #f2f8fd; --todo-item-hover-bg: #e4f0fa; --todo-item-border-left: #FF6863;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f0f5fa; --todo-item-completed-border-left: #88b8e0;
   --todo-item-completed-text: #88b8e0;
   --preview-bg: #dceefb; --preview-border: #b8d8f0; --preview-text: #0a4a85;
   --preview-hover-bg: #c0e0f8; --preview-hover-border: #88b8e0;
@@ -246,7 +246,7 @@
   --weekday-header-weekend-color: #a84420; --weekday-header-weekend-bg: #fdeee4;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #0A3E68; --badge-work-text: #fff;
   --todo-item-bg: #fef6f2; --todo-item-hover-bg: #fce8de; --todo-item-border-left: #0A3E68;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f8f2f0; --todo-item-completed-border-left: #a8b8cc;
   --todo-item-completed-text: #a8b8cc;
   --preview-bg: #fde8de; --preview-border: #f0d0be; --preview-text: #cc5530;
   --preview-hover-bg: #f8d4c0; --preview-hover-border: #d4a888;
@@ -282,7 +282,7 @@
   --weekday-header-weekend-color: #064a3e; --weekday-header-weekend-bg: #dff5f0;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #0891b2; --badge-work-text: #fff;
   --todo-item-bg: #f2faf8; --todo-item-hover-bg: #e0f2ee; --todo-item-border-left: #FFBF51;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #10b981;
+  --todo-item-completed-bg: #f3f1f7; --todo-item-completed-border-left: #c4b5fd;
   --todo-item-completed-text: #78c0b0;
   --preview-bg: #d5f0ec; --preview-border: #a8d8cc; --preview-text: #064a3e;
   --preview-hover-bg: #b8e8e0; --preview-hover-border: #78c0b0;
@@ -318,7 +318,7 @@
   --weekday-header-weekend-color: #6330e0; --weekday-header-weekend-bg: #ede8fd;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #8255FA; --badge-work-text: #fff;
   --todo-item-bg: #f8f5ff; --todo-item-hover-bg: #ede8fd; --todo-item-border-left: #6ab018;
-  --todo-item-completed-bg: #f0fde8; --todo-item-completed-border-left: #95DD24;
+  --todo-item-completed-bg: #f5f2fa; --todo-item-completed-border-left: #b8a0e0;
   --todo-item-completed-text: #a898cc;
   --preview-bg: #ede5fd; --preview-border: #d8c8f0; --preview-text: #6330e0;
   --preview-hover-bg: #ddd0f8; --preview-hover-border: #b8a0e0;
@@ -354,7 +354,7 @@
   --weekday-header-weekend-color: #443080; --weekday-header-weekend-bg: #eae4f6;
   --badge-rest-bg: #ef4444; --badge-rest-text: #fff; --badge-work-bg: #5F469A; --badge-work-text: #fff;
   --todo-item-bg: #f8f5ff; --todo-item-hover-bg: #ede8f8; --todo-item-border-left: #EED557;
-  --todo-item-completed-bg: #ecfdf5; --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-bg: #f5f2fa; --todo-item-completed-border-left: #a898cc;
   --todo-item-completed-text: #a898cc;
   --preview-bg: #e8e0f5; --preview-border: #d0c4e8; --preview-text: #443080;
   --preview-hover-bg: #ddd0f0; --preview-hover-border: #a898cc;
@@ -390,7 +390,7 @@
   --weekday-header-weekend-color: #818cf8; --weekday-header-weekend-bg: #141c30;
   --badge-rest-bg: #e11d48; --badge-rest-text: #fff; --badge-work-bg: #3b82f6; --badge-work-text: #fff;
   --todo-item-bg: #172033; --todo-item-hover-bg: #1e2a48; --todo-item-border-left: #60a5fa;
-  --todo-item-completed-bg: #0d2818; --todo-item-completed-border-left: #34d399;
+  --todo-item-completed-bg: #1a1e2e; --todo-item-completed-border-left: #475569;
   --todo-item-completed-text: #64748b;
   --preview-bg: rgba(96,165,250,0.08); --preview-border: rgba(96,165,250,0.2);
   --preview-text: #93c5fd; --preview-hover-bg: rgba(96,165,250,0.12);

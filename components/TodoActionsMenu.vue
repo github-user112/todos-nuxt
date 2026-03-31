@@ -1,10 +1,10 @@
 <template>
   <div class="todo-actions">
-    <button @click="$emit('complete')" class="action-btn complete-btn">
+    <button @click.stop="$emit('complete')" class="action-btn complete-btn">
       <span class="action-icon">✓</span>
       <span>{{ completedText }}</span>
     </button>
-    <button @click="$emit('delete')" class="action-btn delete-btn">
+    <button @click.stop="$emit('delete')" class="action-btn delete-btn">
       <span class="action-icon">✕</span>
       <span>删除</span>
     </button>
@@ -55,6 +55,8 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
   gap: 10px;
   font-weight: 500;
   transition: background-color 0.15s, color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .action-icon {
