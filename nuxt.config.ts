@@ -36,6 +36,10 @@ export default defineNuxtConfig({
       ],
       script: [
         { src: 'https://unpkg.com/holiday-calendar/src/index.min.js' },
+        {
+          innerHTML: `(function(){try{var t=localStorage.getItem('calendar_theme_type');if(t&&t!=='default'){var m={'deep-dawn':'theme-deep-dawn','twilight-rose':'theme-twilight-rose','amber-night':'theme-amber-night','coral-sand':'theme-coral-sand','azure-flame':'theme-azure-flame','sunset-bay':'theme-sunset-bay','emerald-gold':'theme-emerald-gold','violet-spring':'theme-violet-spring','royal-gold':'theme-royal-gold','midnight-blue':'theme-midnight-blue'};var c=m[t];if(c){document.documentElement.classList.add(c);if(t==='midnight-blue')document.documentElement.classList.add('dark-mode')}}}catch(e){}})();`,
+          tagPosition: 'head',
+        },
       ],
     },
   },

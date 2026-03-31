@@ -1,11 +1,11 @@
 <template>
   <div class="todo-actions">
     <button @click="$emit('complete')" class="action-btn complete-btn">
-      <span class="action-icon complete-icon">✓</span>
+      <span class="action-icon">✓</span>
       <span>{{ completedText }}</span>
     </button>
     <button @click="$emit('delete')" class="action-btn delete-btn">
-      <span class="action-icon delete-icon">✕</span>
+      <span class="action-icon">✕</span>
       <span>删除</span>
     </button>
   </div>
@@ -54,7 +54,7 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
   align-items: center;
   gap: 10px;
   font-weight: 500;
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .action-icon {
@@ -69,47 +69,23 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
   transition: background-color 0.15s;
 }
 
-/* ---- 完成按钮 ---- */
-.complete-btn {
-  color: var(--success-color);
-}
-.complete-btn:hover {
-  background: var(--success-color);
-  color: #fff;
-}
-.complete-btn:hover .complete-icon {
-  background: rgba(255,255,255,0.25);
-  color: #fff;
-}
-.complete-icon {
-  background: rgba(16,185,129,0.1);
-  color: var(--success-color);
-}
+/* ---- 完成 ---- */
+.complete-btn { color: var(--success-color); }
+.complete-btn .action-icon { background: rgba(16,185,129,0.1); }
+.complete-btn:hover { background: var(--success-color); color: #fff; }
+.complete-btn:hover .action-icon { background: rgba(255,255,255,0.2); }
 
-/* ---- 删除按钮 ---- */
-.delete-btn {
-  color: var(--danger-color);
-}
-.delete-btn:hover {
-  background: var(--danger-color);
-  color: #fff;
-}
-.delete-btn:hover .delete-icon {
-  background: rgba(255,255,255,0.25);
-  color: #fff;
-}
-.delete-icon {
-  background: rgba(239,68,68,0.1);
-  color: var(--danger-color);
-}
+/* ---- 删除 ---- */
+.delete-btn { color: var(--danger-color); }
+.delete-btn .action-icon { background: rgba(239,68,68,0.1); }
+.delete-btn:hover { background: var(--danger-color); color: #fff; }
+.delete-btn:hover .action-icon { background: rgba(255,255,255,0.2); }
 
 @media (max-width: 768px) {
   .todo-actions {
     width: 100%;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
+    bottom: 0; left: 0;
     flex-direction: row;
     justify-content: space-around;
     border-radius: 16px 16px 0 0;
