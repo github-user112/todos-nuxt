@@ -158,15 +158,17 @@
 
     <template #footer>
       <NSpace justify="end">
-        <NButton @click="$emit('close')">取消</NButton>
-        <NButton type="primary" @click="handleSave">保存</NButton>
+        <NButton @click="$emit('close')" :disabled="saving">取消</NButton>
+        <NButton type="primary" @click="handleSave" :loading="saving" :disabled="saving">
+          保存
+        </NButton>
       </NSpace>
     </template>
   </NModal>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import {
   NModal,
   NCard,
@@ -209,6 +211,12 @@ const emit = defineEmits([
 ])
 
 const message = useMessage()
+const saving = ref(false)
+
+// 弹窗关闭时重置 saving
+watch(() => props.show, (val) => {
+  if (!val) saving.value = false
+})
 
 // 各类型的间隔值
 const intervals = ref({
@@ -316,6 +324,7 @@ const calculateEndDate = () => {
 
 // 处理保存
 const handleSave = () => {
+  if (saving.value) return
   if (!props.todoText || !props.todoText.trim()) {
     message.warning('请输入待办事项名称')
     return
@@ -325,12 +334,15 @@ const handleSave = () => {
     validateInterval(props.todoRepeat)
   }
 
+  saving.value = true
   emit('save', {
     repeatType: props.todoRepeat,
     repeatInterval: currentInterval.value,
     endDate: endDate.value || undefined,
     repeatCount: repeatCount.value || undefined,
   })
+  // 父组件关闭弹窗时会重置状态，这里设个超时兜底
+  setTimeout(() => { saving.value = false }, 3000)
 }
 </script>
 

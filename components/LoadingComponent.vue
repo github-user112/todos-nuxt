@@ -2,14 +2,13 @@
   <Transition name="loading-fade">
     <div class="loading-overlay" v-if="show">
       <div class="loading-container">
-        <!-- 品牌化动画 -->
         <div class="brand-spinner">
           <div class="spinner-ring"></div>
           <div class="spinner-ring delay-1"></div>
           <div class="spinner-ring delay-2"></div>
           <div class="spinner-core">📅</div>
         </div>
-        <div class="loading-text">{{ text || '日历加载中' }}</div>
+        <div class="loading-text">Loading</div>
         <div class="loading-dots">
           <span class="dot"></span>
           <span class="dot delay-1"></span>
@@ -23,7 +22,7 @@
 <script setup>
 defineProps({
   show: { type: Boolean, required: true, default: false },
-  text: { type: String, default: '日历加载中' },
+  text: { type: String, default: 'Loading' },
 })
 </script>
 
@@ -47,7 +46,6 @@ defineProps({
   gap: 20px;
 }
 
-/* ---- 品牌动画 ---- */
 .brand-spinner {
   position: relative;
   width: 80px;
@@ -97,7 +95,6 @@ defineProps({
   to { transform: rotate(360deg); }
 }
 
-/* ---- 文字 + 点 ---- */
 .loading-text {
   font-size: 15px;
   color: var(--loading-text, #1e1b4b);

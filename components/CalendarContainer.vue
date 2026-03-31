@@ -125,8 +125,8 @@
       </div>
       <template #footer>
         <NSpace justify="end">
-          <NButton @click="cancelDelete">取消</NButton>
-          <NButton type="error" @click="confirmDelete">确认删除</NButton>
+          <NButton @click="cancelDelete" :disabled="deleting">取消</NButton>
+          <NButton type="error" @click="confirmDelete" :loading="deleting" :disabled="deleting">确认删除</NButton>
         </NSpace>
       </template>
     </NModal>
@@ -226,6 +226,7 @@ const selectedDate = ref(null)
 
 // Delete dialog state
 const showDeleteDialog = ref(false)
+const deleting = ref(false)
 const deleteTargetTodoId = ref(null)
 const deleteTargetDate = ref(null)
 const deleteAllInstances = ref(false)
@@ -466,13 +467,18 @@ const startDelete = () => {
 }
 
 const confirmDelete = async () => {
-  if (!deleteTargetTodoId.value) return
-  await emit('delete-todo', {
-    todoId: deleteTargetTodoId.value,
-    date: deleteTargetDate.value,
-    allInstances: deleteAllInstances.value,
-  })
-  showDeleteDialog.value = false
+  if (!deleteTargetTodoId.value || deleting.value) return
+  deleting.value = true
+  try {
+    await emit('delete-todo', {
+      todoId: deleteTargetTodoId.value,
+      date: deleteTargetDate.value,
+      allInstances: deleteAllInstances.value,
+    })
+    showDeleteDialog.value = false
+  } finally {
+    deleting.value = false
+  }
 }
 
 const cancelDelete = () => {
