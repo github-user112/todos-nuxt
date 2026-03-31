@@ -98,26 +98,26 @@ function getHolidayName(holiday) {
 
 /* ---- 周六 ---- */
 .saturday-day {
-  background: var(--calendar-day-saturday-bg);
-  border-color: var(--calendar-day-saturday-border);
+  background: var(--weekend-bg-sat);
+  border-color: var(--weekend-border);
 }
 .saturday-day .day-number {
-  color: var(--calendar-day-saturday-number-color);
+  color: var(--weekend-number-color);
 }
 .saturday-day .todo-item {
-  border-left-color: var(--calendar-day-saturday-todo-accent);
+  border-left-color: var(--weekend-todo-accent);
 }
 
 /* ---- 周日 ---- */
 .sunday-day {
-  background: var(--calendar-day-sunday-bg);
-  border-color: var(--calendar-day-sunday-border);
+  background: var(--weekend-bg-sun);
+  border-color: var(--weekend-border);
 }
 .sunday-day .day-number {
-  color: var(--calendar-day-sunday-number-color);
+  color: var(--weekend-number-color);
 }
 .sunday-day .todo-item {
-  border-left-color: var(--calendar-day-sunday-todo-accent);
+  border-left-color: var(--weekend-todo-accent);
 }
 
 /* ---- 节假日(休) ---- */
