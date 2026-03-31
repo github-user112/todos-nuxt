@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
   try {
     // 获取所有未过期的待办（包括很久之前创建的重复事件）
     const todosResult = await DB.prepare(`
-      SELECT id, text, date, repeat_type, repeat_interval, end_date, completed, user_id, next_date
+      SELECT id, text, date, repeat_type, repeat_interval, end_date, completed, user_id
       FROM todos
       WHERE user_id = ?
         AND (end_date IS NULL OR end_date >= ?)

@@ -1,4 +1,4 @@
--- 待办事项表
+-- 待办事项表（不含 next_date）
 CREATE TABLE IF NOT EXISTS todos (
   id INTEGER PRIMARY KEY,
   text TEXT NOT NULL,
@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS todos (
   end_date TEXT,
   completed INTEGER DEFAULT 0,
   user_id TEXT NOT NULL,
-  next_date TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -37,4 +36,3 @@ CREATE INDEX IF NOT EXISTS idx_todos_user_date ON todos (user_id, date);
 CREATE INDEX IF NOT EXISTS idx_todos_repeat_type_interval ON todos (repeat_type, repeat_interval);
 CREATE INDEX IF NOT EXISTS idx_completed_instances_user_todo_date ON completed_instances (user_id, todo_id, date);
 CREATE INDEX IF NOT EXISTS idx_deleted_instances_user_todo_date ON deleted_instances (user_id, todo_id, date);
-

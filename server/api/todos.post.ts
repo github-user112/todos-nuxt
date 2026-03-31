@@ -44,8 +44,8 @@ export default defineEventHandler(async (event) => {
 
   try {
     const result = await DB.prepare(`
-      INSERT INTO todos (text, date, repeat_type, repeat_interval, end_date, completed, user_id, next_date)
-      VALUES (?, ?, ?, ?, ?, 0, ?, NULL)
+      INSERT INTO todos (text, date, repeat_type, repeat_interval, end_date, completed, user_id)
+      VALUES (?, ?, ?, ?, ?, 0, ?)
     `).bind(body.text, body.date, repeatType, repeatInterval, endDate, userId).run();
 
     if (result.success) {
