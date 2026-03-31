@@ -1,329 +1,404 @@
 :root {
-  /* 主色调 */
-  --primary-color: #ff7d00; /* 活力橙 */
-  --primary-light: #ffedd5; /* 浅橙色 */
-  --primary-dark: #c2410c; /* 深橙色 */
-  
-  /* 辅助色 */
-  --success-color: #10b981; /* 成功绿 */
-  --danger-color: #ef4444; /* 危险红 */
-  --info-color: #3b82f6; /* 信息蓝 */
-  --warning-color: #f59e0b; /* 警告色 */
-  
-  /* 中性色 */
-  --background-color: #ffffff; /* 背景色 */
-  --card-background: #f9fafb; /* 卡片背景 */
-  --text-primary: #111827; /* 主要文本 */
-  --text-secondary: #6b7280; /* 次要文本 */
-  --border-color: #e5e7eb; /* 边框色 */
-  --hover-color: #f3f4f6; /* 悬停色 */
-  
-  /* 月份区分颜色 */
-  --current-month-bg: #ffffff; /* 本月背景色 */
-  --current-month-border: #e5e7eb; /* 本月边框色 */
-  --other-month-bg: #f9fafb; /* 其他月背景色 */
-  --other-month-border: #f3f4f6; /* 其他月边框色 */
-  --other-month-text: #9ca3af; /* 其他月文本色 */
-  
-  /* 按钮颜色 */
-  --button-primary-bg: #4a6cf7;
-  --button-primary-hover-bg: #3a5bd9;
-  --button-secondary-bg: #f8fafc;
-  --button-secondary-hover-bg: #edf2f7;
-  --button-success-bg: #38a169;
-  --button-success-hover-bg: #2f855a;
-  --button-danger-bg: #e53e3e;
-  --button-danger-hover-bg: #c53030;
-  
-  /* 日历特定颜色 */
-  --calendar-day-bg: #ffffff;
-  --calendar-day-border: #e2e8f0;
-  --calendar-day-hover-bg: #ebf8ff;
-  --calendar-day-current-bg: #ebf8ff;
-  --calendar-day-current-border: #3182ce;
-  --calendar-day-other-month-opacity: 0.6;
-  --calendar-day-weekend-bg: #f0f7ff;
-  --calendar-day-weekend-border: #d0e1fd;
-  --calendar-day-holiday-rest-bg: #fff0f0;
-  --calendar-day-holiday-rest-border: #ffd0d0;
-  --calendar-day-holiday-work-bg: #e6f7ff;
-  --calendar-day-holiday-work-border: #bae7ff;
-  
-  /* 待办事项颜色 */
-  --todo-item-bg: #f8fafc;
-  --todo-item-border-left: #4a6cf7;
-  --todo-item-completed-bg: #f0fff4;
-  --todo-item-completed-border-left: #48bb78;
-  --todo-item-completed-text: #a0aec0;
-  
-  /* 预览颜色 */
-  --preview-bg: #f0f9ff;
-  --preview-border: #bae6fd;
-  --preview-text: #0369a1;
-  --preview-hover-bg: #e0f2fe;
-  --preview-hover-border: #7dd3fc;
-  
-  /* 节日徽章颜色 */
-  --badge-rest-bg: #e53e3e;
-  --badge-work-bg: #3182ce;
-  --badge-text: #ffffff;
-  
-  /* 加载组件颜色 */
-  --loading-overlay-bg: rgba(255, 255, 255, 0.85);
-  --loading-spinner-border: #f3f3f3;
-  --loading-spinner-border-top: #3498db;
-  --loading-text: #333333;
-  
-  /* 表单颜色 */
-  --form-input-border: #ddd;
-  --form-input-focus-border: #4a6cf7;
-  --form-input-focus-shadow: rgba(74, 108, 247, 0.2);
-}
+  /* ============ 默认主题 - 极光紫 ============ */
+  --primary-color: #7c3aed;
+  --primary-light: #ede9fe;
+  --primary-dark: #5b21b6;
 
-/* 经典主题 */
-.classic-theme {
-  /* 主色调 */
-  --primary-color: #007bff; /* 经典蓝 */
-  --primary-light: #cce5ff; /* 浅蓝色 */
-  --primary-dark: #0056b3; /* 深蓝色 */
-  
-  /* 辅助色 */
-  --success-color: #28a745; /* 成功绿 */
-  --danger-color: #dc3545; /* 危险红 */
-  --info-color: #17a2b8; /* 信息蓝 */
-  --warning-color: #ffc107; /* 警告黄 */
-  
-  /* 中性色 */
-  --background-color: #f8f9fa; /* 背景色 */
-  --card-background: #ffffff; /* 卡片背景 */
-  --text-primary: #212529; /* 主要文本 */
-  --text-secondary: #6c757d; /* 次要文本 */
-  --border-color: #dee2e6; /* 边框色 */
-  --hover-color: #e9ecef; /* 悬停色 */
-  
-  /* 按钮颜色 */
-  --button-primary-bg: #007bff;
-  --button-primary-hover-bg: #0069d9;
-  --button-secondary-bg: #6c757d;
-  --button-secondary-hover-bg: #5a6268;
-  --button-success-bg: #28a745;
-  --button-success-hover-bg: #218838;
-  --button-danger-bg: #dc3545;
-  --button-danger-hover-bg: #c82333;
-  
-  /* 日历特定颜色 */
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --info-color: #6366f1;
+  --warning-color: #f59e0b;
+
+  --background-color: #faf5ff;
+  --card-background: #ffffff;
+  --text-primary: #1e1b4b;
+  --text-secondary: #6b7280;
+  --border-color: #e9d5ff;
+  --hover-color: #f5f3ff;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #e9d5ff;
+  --other-month-bg: #faf5ff;
+  --other-month-border: #f3e8ff;
+  --other-month-text: #c4b5fd;
+
+  --button-primary-bg: #7c3aed;
+  --button-primary-hover-bg: #6d28d9;
+  --button-secondary-bg: #f5f3ff;
+  --button-secondary-hover-bg: #ede9fe;
+  --button-success-bg: #10b981;
+  --button-success-hover-bg: #059669;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
+
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #dee2e6;
-  --calendar-day-hover-bg: #e3f2fd;
-  --calendar-day-current-bg: #d1ecf1;
-  --calendar-day-current-border: #007bff;
+  --calendar-day-border: #e9d5ff;
+  --calendar-day-hover-bg: #f5f3ff;
+  --calendar-day-current-bg: #ede9fe;
+  --calendar-day-current-border: #7c3aed;
   --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fff8e1;
-  --calendar-day-weekend-border: #ffecb3;
-  --calendar-day-holiday-rest-bg: #ffebee;
-  --calendar-day-holiday-rest-border: #ffcdd2;
-  --calendar-day-holiday-work-bg: #e3f2fd;
-  --calendar-day-holiday-work-border: #bbdefb;
-  
-  /* 待办事项颜色 */
-  --todo-item-bg: #f8f9fa;
-  --todo-item-border-left: #007bff;
-  --todo-item-completed-bg: #e8f5e9;
-  --todo-item-completed-border-left: #4caf50;
-  --todo-item-completed-text: #6c757d;
-  
-  /* 预览颜色 */
-  --preview-bg: #e3f2fd;
-  --preview-border: #bbdefb;
-  --preview-text: #1976d2;
-  --preview-hover-bg: #bbdefb;
-  --preview-hover-border: #90caf9;
-  
-  /* 节日徽章颜色 */
-  --badge-rest-bg: #dc3545;
-  --badge-work-bg: #007bff;
+  --calendar-day-weekend-bg: #fef3c7;
+  --calendar-day-weekend-border: #fde68a;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fecaca;
+  --calendar-day-holiday-work-bg: #e0e7ff;
+  --calendar-day-holiday-work-border: #c7d2fe;
+
+  --todo-item-bg: #f5f3ff;
+  --todo-item-border-left: #7c3aed;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #10b981;
+  --todo-item-completed-text: #a78bfa;
+
+  --preview-bg: #f5f3ff;
+  --preview-border: #e9d5ff;
+  --preview-text: #7c3aed;
+  --preview-hover-bg: #ede9fe;
+  --preview-hover-border: #c4b5fd;
+
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #6366f1;
   --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(250, 245, 255, 0.9);
+  --loading-spinner-border: #e9d5ff;
+  --loading-spinner-border-top: #7c3aed;
+  --loading-text: #1e1b4b;
+
+  --form-input-border: #e9d5ff;
+  --form-input-focus-border: #7c3aed;
+  --form-input-focus-shadow: rgba(124, 58, 237, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(124, 58, 237, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(124, 58, 237, 0.1);
 }
 
-/* 橙色主题 */
+/* ============ 薄暮粉 - 柔和浪漫 ============ */
+.classic-theme {
+  --primary-color: #ec4899;
+  --primary-light: #fce7f3;
+  --primary-dark: #be185d;
+
+  --success-color: #22c55e;
+  --danger-color: #f43f5e;
+  --info-color: #a855f7;
+  --warning-color: #f97316;
+
+  --background-color: #fdf2f8;
+  --card-background: #ffffff;
+  --text-primary: #500724;
+  --text-secondary: #9d174d;
+  --border-color: #fbcfe8;
+  --hover-color: #fce7f3;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #fbcfe8;
+  --other-month-bg: #fdf2f8;
+  --other-month-border: #fce7f3;
+  --other-month-text: #f9a8d4;
+
+  --button-primary-bg: #ec4899;
+  --button-primary-hover-bg: #db2777;
+  --button-secondary-bg: #fdf2f8;
+  --button-secondary-hover-bg: #fce7f3;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #f43f5e;
+  --button-danger-hover-bg: #e11d48;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #fbcfe8;
+  --calendar-day-hover-bg: #fdf2f8;
+  --calendar-day-current-bg: #fce7f3;
+  --calendar-day-current-border: #ec4899;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fff7ed;
+  --calendar-day-weekend-border: #fed7aa;
+  --calendar-day-holiday-rest-bg: #ffe4e6;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #fae8ff;
+  --calendar-day-holiday-work-border: #f0abfc;
+
+  --todo-item-bg: #fdf2f8;
+  --todo-item-border-left: #ec4899;
+  --todo-item-completed-bg: #f0fdf4;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #f9a8d4;
+
+  --preview-bg: #fdf2f8;
+  --preview-border: #fbcfe8;
+  --preview-text: #db2777;
+  --preview-hover-bg: #fce7f3;
+  --preview-hover-border: #f9a8d4;
+
+  --badge-rest-bg: #f43f5e;
+  --badge-work-bg: #a855f7;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(253, 242, 248, 0.9);
+  --loading-spinner-border: #fbcfe8;
+  --loading-spinner-border-top: #ec4899;
+  --loading-text: #500724;
+
+  --form-input-border: #fbcfe8;
+  --form-input-focus-border: #ec4899;
+  --form-input-focus-shadow: rgba(236, 72, 153, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(236, 72, 153, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(236, 72, 153, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(236, 72, 153, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(236, 72, 153, 0.1);
+}
+
+/* ============ 晴空蓝 - 清爽通透 ============ */
 .orange-theme {
-  /* 主色调 */
-  --primary-color: #ff6b00; /* 橙色 */
-  --primary-light: #ffeacc; /* 浅橙色 */
-  --primary-dark: #cc5500; /* 深橙色 */
-  
-  /* 辅助色 */
-  --success-color: #22c55e; /* 成功绿 */
-  --danger-color: #ef4444; /* 危险红 */
-  --info-color: #3b82f6; /* 信息蓝 */
-  --warning-color: #f97316; /* 警告橙 */
-  
-  /* 中性色 */
-  --background-color: #fff9f2; /* 背景色 */
-  --card-background: #ffffff; /* 卡片背景 */
-  --text-primary: #2d2d2d; /* 主要文本 */
-  --text-secondary: #737373; /* 次要文本 */
-  --border-color: #fed7aa; /* 边框色 */
-  --hover-color: #fff2e8; /* 悬停色 */
-  
-  /* 按钮颜色 */
-  --button-primary-bg: #ff6b00;
-  --button-primary-hover-bg: #cc5500;
-  --button-secondary-bg: #fef3c7;
-  --button-secondary-hover-bg: #fde68a;
+  --primary-color: #0ea5e9;
+  --primary-light: #e0f2fe;
+  --primary-dark: #0369a1;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --info-color: #8b5cf6;
+  --warning-color: #eab308;
+
+  --background-color: #f0f9ff;
+  --card-background: #ffffff;
+  --text-primary: #0c4a6e;
+  --text-secondary: #0369a1;
+  --border-color: #bae6fd;
+  --hover-color: #e0f2fe;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #bae6fd;
+  --other-month-bg: #f0f9ff;
+  --other-month-border: #e0f2fe;
+  --other-month-text: #7dd3fc;
+
+  --button-primary-bg: #0ea5e9;
+  --button-primary-hover-bg: #0284c7;
+  --button-secondary-bg: #f0f9ff;
+  --button-secondary-hover-bg: #e0f2fe;
   --button-success-bg: #22c55e;
   --button-success-hover-bg: #16a34a;
   --button-danger-bg: #ef4444;
   --button-danger-hover-bg: #dc2626;
-  
-  /* 日历特定颜色 */
-  --calendar-day-bg: #ffffff;
-  --calendar-day-border: #fed7aa;
-  --calendar-day-hover-bg: #fff2e8;
-  --calendar-day-current-bg: #fff7ed;
-  --calendar-day-current-border: #ff6b00;
-  --calendar-day-other-month-opacity: 0.6;
-  --calendar-day-weekend-bg: #fff8f0;
-  --calendar-day-weekend-border: #fdba74;
-  --calendar-day-holiday-rest-bg: #fff0f0;
-  --calendar-day-holiday-rest-border: #fecaca;
-  --calendar-day-holiday-work-bg: #fff7ed;
-  --calendar-day-holiday-work-border: #fed7aa;
-  
-  /* 待办事项颜色 */
-  --todo-item-bg: #fffaf2;
-  --todo-item-border-left: #ff6b00;
-  --todo-item-completed-bg: #f0fdf4;
-  --todo-item-completed-border-left: #4ade80;
-  --todo-item-completed-text: #a3a3a3;
-  
-  /* 预览颜色 */
-  --preview-bg: #fff7ed;
-  --preview-border: #fed7aa;
-  --preview-text: #ea580c;
-  --preview-hover-bg: #fff2e8;
-  --preview-hover-border: #fdba74;
-  
-  /* 节日徽章颜色 */
-  --badge-rest-bg: #ef4444;
-  --badge-work-bg: #3b82f6;
-  --badge-text: #ffffff;
-  
-  /* 加载组件颜色 */
-  --loading-overlay-bg: rgba(255, 249, 242, 0.85);
-  --loading-spinner-border: #fed7aa;
-  --loading-spinner-border-top: #ff6b00;
-  --loading-text: #2d2d2d;
-  
-  /* 表单颜色 */
-  --form-input-border: #fed7aa;
-  --form-input-focus-border: #ff6b00;
-  --form-input-focus-shadow: rgba(255, 107, 0, 0.2);
-  
-  /* 月份区分颜色 */
-  --current-month-bg: #ffffff; /* 本月背景色 */
-  --current-month-border: #fed7aa; /* 本月边框色 */
-  --other-month-bg: #fffaf2; /* 其他月背景色 */
-  --other-month-border: #fff2e8; /* 其他月边框色 */
-  --other-month-text: #a3a3a3; /* 其他月文本色 */
-}
 
-/* 绿色护眼主题 */
-.green-theme {
-  /* 主色调 */
-  --primary-color: #22c55e; /* 护眼绿 */
-  --primary-light: #dcfce7; /* 浅绿色 */
-  --primary-dark: #15803d; /* 深绿色 */
-  
-  /* 辅助色 */
-  --success-color: #22c55e; /* 成功绿 */
-  --danger-color: #ef4444; /* 危险红 */
-  --info-color: #0ea5e9; /* 信息蓝 */
-  --warning-color: #f59e0b; /* 警告色 */
-  
-  /* 中性色 */
-  --background-color: #f0fdf4; /* 背景色 */
-  --card-background: #ffffff; /* 卡片背景 */
-  --text-primary: #14532d; /* 主要文本 */
-  --text-secondary: #3f6212; /* 次要文本 */
-  --border-color: #bbf7d0; /* 边框色 */
-  --hover-color: #dcfce7; /* 悬停色 */
-  
-  /* 按钮颜色 */
-  --button-primary-bg: #22c55e;
-  --button-primary-hover-bg: #15803d;
-  --button-secondary-bg: #f0fdf4;
-  --button-secondary-hover-bg: #dcfce7;
-  --button-success-bg: #16a34a;
-  --button-success-hover-bg: #15803d;
-  --button-danger-bg: #ef4444;
-  --button-danger-hover-bg: #dc2626;
-  
-  /* 日历特定颜色 */
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #bbf7d0;
-  --calendar-day-hover-bg: #dcfce7;
-  --calendar-day-current-bg: #dcfce7;
-  --calendar-day-current-border: #22c55e;
-  --calendar-day-other-month-opacity: 0.6;
-  --calendar-day-weekend-bg: #f0fdf4;
-  --calendar-day-weekend-border: #86efac;
-  --calendar-day-holiday-rest-bg: #f0fdf4;
-  --calendar-day-holiday-rest-border: #86efac;
-  --calendar-day-holiday-work-bg: #dcfce7;
-  --calendar-day-holiday-work-border: #bbf7d0;
-  
-  /* 待办事项颜色 */
-  --todo-item-bg: #f0fdf4;
-  --todo-item-border-left: #22c55e;
-  --todo-item-completed-bg: #f0fdf4;
-  --todo-item-completed-border-left: #4ade80;
-  --todo-item-completed-text: #4b5563;
-  
-  /* 预览颜色 */
-  --preview-bg: #dcfce7;
-  --preview-border: #bbf7d0;
-  --preview-text: #15803d;
-  --preview-hover-bg: #bbf7d0;
-  --preview-hover-border: #86efac;
-  
-  /* 节日徽章颜色 */
+  --calendar-day-border: #bae6fd;
+  --calendar-day-hover-bg: #f0f9ff;
+  --calendar-day-current-bg: #e0f2fe;
+  --calendar-day-current-border: #0ea5e9;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fef9c3;
+  --calendar-day-weekend-border: #fde047;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fca5a5;
+  --calendar-day-holiday-work-bg: #dbeafe;
+  --calendar-day-holiday-work-border: #93c5fd;
+
+  --todo-item-bg: #f0f9ff;
+  --todo-item-border-left: #0ea5e9;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #7dd3fc;
+
+  --preview-bg: #f0f9ff;
+  --preview-border: #bae6fd;
+  --preview-text: #0284c7;
+  --preview-hover-bg: #e0f2fe;
+  --preview-hover-border: #7dd3fc;
+
   --badge-rest-bg: #ef4444;
   --badge-work-bg: #0ea5e9;
   --badge-text: #ffffff;
-  
-  /* 加载组件颜色 */
-  --loading-overlay-bg: rgba(240, 253, 244, 0.85);
-  --loading-spinner-border: #bbf7d0;
-  --loading-spinner-border-top: #22c55e;
-  --loading-text: #14532d;
-  
-  /* 表单颜色 */
-  --form-input-border: #bbf7d0;
-  --form-input-focus-border: #22c55e;
-  --form-input-focus-shadow: rgba(34, 197, 94, 0.2);
-  
-  /* 月份区分颜色 */
-  --current-month-bg: #ffffff; /* 本月背景色 */
-  --current-month-border: #bbf7d0; /* 本月边框色 */
-  --other-month-bg: #f0fdf4; /* 其他月背景色 */
-  --other-month-border: #dcfce7; /* 其他月边框色 */
-  --other-month-text: #4b5563; /* 其他月文本色 */
+
+  --loading-overlay-bg: rgba(240, 249, 255, 0.9);
+  --loading-spinner-border: #bae6fd;
+  --loading-spinner-border-top: #0ea5e9;
+  --loading-text: #0c4a6e;
+
+  --form-input-border: #bae6fd;
+  --form-input-focus-border: #0ea5e9;
+  --form-input-focus-shadow: rgba(14, 165, 233, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(14, 165, 233, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(14, 165, 233, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(14, 165, 233, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(14, 165, 233, 0.1);
 }
 
-/* 深色模式变量（可选）*/
-.dark-mode:root {
-  --background-color: #111827;
-  --card-background: #1f2937;
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --border-color: #374151;
-  --hover-color: #374151;
-  
-  /* 月份区分颜色 */
-  --current-month-bg: #1f2937; /* 本月背景色 */
-  --current-month-border: #374151; /* 本月边框色 */
-  --other-month-bg: #111827; /* 其他月背景色 */
-  --other-month-border: #1f2937; /* 其他月边框色 */
-  --other-month-text: #4b5563; /* 其他月文本色 */
+/* ============ 森野绿 - 自然护眼 ============ */
+.green-theme {
+  --primary-color: #059669;
+  --primary-light: #d1fae5;
+  --primary-dark: #065f46;
+
+  --success-color: #10b981;
+  --danger-color: #f43f5e;
+  --info-color: #0891b2;
+  --warning-color: #d97706;
+
+  --background-color: #f0fdf4;
+  --card-background: #ffffff;
+  --text-primary: #14532d;
+  --text-secondary: #166534;
+  --border-color: #a7f3d0;
+  --hover-color: #dcfce7;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #a7f3d0;
+  --other-month-bg: #f0fdf4;
+  --other-month-border: #dcfce7;
+  --other-month-text: #86efac;
+
+  --button-primary-bg: #059669;
+  --button-primary-hover-bg: #047857;
+  --button-secondary-bg: #f0fdf4;
+  --button-secondary-hover-bg: #dcfce7;
+  --button-success-bg: #10b981;
+  --button-success-hover-bg: #059669;
+  --button-danger-bg: #f43f5e;
+  --button-danger-hover-bg: #e11d48;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #a7f3d0;
+  --calendar-day-hover-bg: #f0fdf4;
+  --calendar-day-current-bg: #d1fae5;
+  --calendar-day-current-border: #059669;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fefce8;
+  --calendar-day-weekend-border: #fde047;
+  --calendar-day-holiday-rest-bg: #ffe4e6;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #dbeafe;
+  --calendar-day-holiday-work-border: #93c5fd;
+
+  --todo-item-bg: #f0fdf4;
+  --todo-item-border-left: #059669;
+  --todo-item-completed-bg: #f0fdf4;
+  --todo-item-completed-border-left: #10b981;
+  --todo-item-completed-text: #86efac;
+
+  --preview-bg: #f0fdf4;
+  --preview-border: #a7f3d0;
+  --preview-text: #047857;
+  --preview-hover-bg: #dcfce7;
+  --preview-hover-border: #6ee7b7;
+
+  --badge-rest-bg: #f43f5e;
+  --badge-work-bg: #0891b2;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(240, 253, 244, 0.9);
+  --loading-spinner-border: #a7f3d0;
+  --loading-spinner-border-top: #059669;
+  --loading-text: #14532d;
+
+  --form-input-border: #a7f3d0;
+  --form-input-focus-border: #059669;
+  --form-input-focus-shadow: rgba(5, 150, 105, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(5, 150, 105, 0.1);
+}
+
+/* ============ 深邃夜 - 深色模式 ============ */
+.dark-mode:root,
+.dark-theme {
+  --primary-color: #a78bfa;
+  --primary-light: rgba(167, 139, 250, 0.15);
+  --primary-dark: #7c3aed;
+
+  --success-color: #34d399;
+  --danger-color: #fb7185;
+  --info-color: #818cf8;
+  --warning-color: #fbbf24;
+
+  --background-color: #0f0d1a;
+  --card-background: #1a1625;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: #2e2945;
+  --hover-color: #231f35;
+
+  --current-month-bg: #1a1625;
+  --current-month-border: #2e2945;
+  --other-month-bg: #0f0d1a;
+  --other-month-border: #1a1625;
+  --other-month-text: #4c4566;
+
+  --button-primary-bg: #7c3aed;
+  --button-primary-hover-bg: #6d28d9;
+  --button-secondary-bg: #231f35;
+  --button-secondary-hover-bg: #2e2945;
+  --button-success-bg: #059669;
+  --button-success-hover-bg: #047857;
+  --button-danger-bg: #e11d48;
+  --button-danger-hover-bg: #be123c;
+
+  --calendar-day-bg: #1a1625;
+  --calendar-day-border: #2e2945;
+  --calendar-day-hover-bg: #231f35;
+  --calendar-day-current-bg: #2e2945;
+  --calendar-day-current-border: #a78bfa;
+  --calendar-day-other-month-opacity: 0.4;
+  --calendar-day-weekend-bg: #1e1b0f;
+  --calendar-day-weekend-border: #3d3520;
+  --calendar-day-holiday-rest-bg: #1f0d14;
+  --calendar-day-holiday-rest-border: #3d1525;
+  --calendar-day-holiday-work-bg: #0d1720;
+  --calendar-day-holiday-work-border: #1a3040;
+
+  --todo-item-bg: #231f35;
+  --todo-item-border-left: #a78bfa;
+  --todo-item-completed-bg: #0d2818;
+  --todo-item-completed-border-left: #34d399;
+  --todo-item-completed-text: #6b7280;
+
+  --preview-bg: rgba(167, 139, 250, 0.1);
+  --preview-border: rgba(167, 139, 250, 0.25);
+  --preview-text: #c4b5fd;
+  --preview-hover-bg: rgba(167, 139, 250, 0.15);
+  --preview-hover-border: rgba(167, 139, 250, 0.4);
+
+  --badge-rest-bg: #e11d48;
+  --badge-work-bg: #6366f1;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(15, 13, 26, 0.92);
+  --loading-spinner-border: #2e2945;
+  --loading-spinner-border-top: #a78bfa;
+  --loading-text: #e2e8f0;
+
+  --form-input-border: #2e2945;
+  --form-input-focus-border: #a78bfa;
+  --form-input-focus-shadow: rgba(167, 139, 250, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
+}
+
+/* 深色模式下的文本修正 */
+.dark-theme .calendar-day .day-number {
+  color: #e2e8f0;
+}
+.dark-theme .other-month .day-number {
+  color: #4c4566;
+}
+.dark-theme .current-day .day-number {
+  color: #a78bfa;
+}
+.dark-theme .holiday-rest-day .holiday-name {
+  color: #fb7185;
+}
+.dark-theme .holiday-work-day .holiday-name {
+  color: #818cf8;
 }

@@ -1,4 +1,4 @@
-/* 动画样式文件 */
+/* ============ 动画样式文件 ============ */
 
 /* ============ random 随机动画 ============ */
 .random-enter-active {
@@ -12,7 +12,7 @@
   opacity: 0;
 }
 
-/* ============ slide-left 向左滑动动画 ============ */
+/* ============ slide-left 向左滑动 ============ */
 .slide-left-enter-active,
 .slide-left-leave-active {
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -26,9 +26,61 @@
   transform: translateX(calc(var(--direction, 1) * -100vw));
   opacity: 0;
 }
-/* leave 时保持相对定位，不脱离文档流导致抖动 */
 .slide-left-leave-active {
   position: relative;
+}
+
+/* ============ fade-up 淡入上移 ============ */
+.fade-up-enter-active {
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+}
+.fade-up-leave-active {
+  display: none;
+}
+.fade-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ============ zoom-in 缩放进入 ============ */
+.zoom-in-enter-active {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: var(--delay, 0s);
+}
+.zoom-in-leave-active {
+  display: none;
+}
+.zoom-in-enter-from {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+/* ============ flip 翻转进入 ============ */
+.flip-enter-active {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: var(--delay, 0s);
+  perspective: 800px;
+}
+.flip-leave-active {
+  display: none;
+}
+.flip-enter-from {
+  opacity: 0;
+  transform: rotateX(-15deg) translateY(-20px);
+}
+
+/* ============ cascade 级联瀑布 ============ */
+.cascade-enter-active {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc((var(--i, 0) * 7 + var(--j, 0)) * 40ms);
+}
+.cascade-leave-active {
+  display: none;
+}
+.cascade-enter-from {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
 }
 
 /* ============ default 默认动画 ============ */
@@ -57,8 +109,29 @@
   transform: translateX(100vw);
 }
 
-/* ============ animate.css 动画的延迟覆盖 ============ */
+/* ============ animate.css 延迟覆盖 ============ */
 .animate__animated.animate__bounce,
 .animate__animated.animate__tada {
   animation-delay: var(--delay, 0s);
+}
+
+/* ============ 弹窗入场动画 ============ */
+.popup-enter-active {
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.popup-leave-active {
+  transition: all 0.25s cubic-bezier(0.55, 0, 1, 0.45);
+}
+.popup-enter-from {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+}
+.popup-leave-to {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+}
+
+/* ============ 全局过渡增强 ============ */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

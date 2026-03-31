@@ -1,10 +1,14 @@
 <template>
-  <div class="loading-overlay" v-if="show">
-    <div class="loading-container">
-      <div class="loading-spinner"></div>
-      <div class="loading-text">{{ text || '加载中...' }}</div>
+  <Transition name="loading-fade">
+    <div class="loading-overlay" v-if="show">
+      <div class="loading-container">
+        <div class="pulse-ring">
+          <div class="pulse-core"></div>
+        </div>
+        <div class="loading-text">{{ text || '加载中...' }}</div>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <script setup>
@@ -29,38 +33,93 @@ defineProps({
   width: 100%;
   height: 100%;
   background-color: var(--loading-overlay-bg);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.3s ease;
 }
 
 .loading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 24px;
 }
 
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 5px solid var(--loading-spinner-border);
-  border-top: 5px solid var(--loading-spinner-border-top);
+.pulse-ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.pulse-core {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
+  background: var(--primary-color);
+  animation: pulse-core 1.5s ease-in-out infinite;
+}
+
+.pulse-ring::before,
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.pulse-ring::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse-core {
+  0%, 100% {
+    transform: scale(0.85);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    width: 64px;
+    height: 64px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
 }
 
 .loading-text {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--loading-text);
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  animation: text-fade 1.5s ease-in-out infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes text-fade {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.loading-fade-enter-active,
+.loading-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.loading-fade-enter-from,
+.loading-fade-leave-to {
+  opacity: 0;
 }
 </style>

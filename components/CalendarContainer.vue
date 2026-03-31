@@ -22,7 +22,7 @@
     />
 
     <AddTodoPopup
-      v-if="showAddTodoPopup"
+      :show="showAddTodoPopup"
       v-model:todoText="todoText"
       v-model:todoRepeat="todoRepeat"
       :selectedDate="selectedDate"
@@ -340,10 +340,15 @@ const changeTheme = (newType) => {
 const applyTheme = (theme) => {
   if (!import.meta.client) return
   const root = document.documentElement
-  root.classList.remove('classic-theme', 'orange-theme', 'green-theme')
+  root.classList.remove('classic-theme', 'orange-theme', 'green-theme', 'dark-theme')
+  root.classList.remove('dark-mode')
   if (theme === 'classic') root.classList.add('classic-theme')
   else if (theme === 'orange') root.classList.add('orange-theme')
   else if (theme === 'green') root.classList.add('green-theme')
+  else if (theme === 'dark') {
+    root.classList.add('dark-mode')
+    root.classList.add('dark-theme')
+  }
 }
 
 // Touch events
