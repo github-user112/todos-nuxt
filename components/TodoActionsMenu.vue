@@ -1,11 +1,11 @@
 <template>
   <div class="todo-actions">
-    <button @click="$emit('complete')" class="action-btn complete-button">
-      <span class="action-icon">✓</span>
+    <button @click="$emit('complete')" class="action-btn complete-btn">
+      <span class="action-icon complete-icon">✓</span>
       <span>{{ completedText }}</span>
     </button>
-    <button @click="$emit('delete')" class="action-btn delete-button">
-      <span class="action-icon">✕</span>
+    <button @click="$emit('delete')" class="action-btn delete-btn">
+      <span class="action-icon delete-icon">✕</span>
       <span>删除</span>
     </button>
   </div>
@@ -15,10 +15,7 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  isCompleted: {
-    type: Boolean,
-    default: false,
-  },
+  isCompleted: { type: Boolean, default: false },
 })
 
 defineEmits(['complete', 'delete'])
@@ -42,14 +39,8 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
 }
 
 @keyframes actions-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  from { opacity: 0; transform: scale(0.9) translateY(-8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .action-btn {
@@ -58,61 +49,58 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
   background: none;
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s;
   font-size: 14px;
-  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 500;
-}
-
-.action-btn:hover {
-  padding-left: 24px;
-}
-
-.action-btn:active {
-  transform: scale(0.97);
+  transition: background-color 0.15s;
 }
 
 .action-icon {
   font-weight: bold;
-  font-size: 16px;
-  width: 24px;
-  height: 24px;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  transition: all 0.2s;
+  border-radius: 8px;
+  transition: background-color 0.15s;
 }
 
-.complete-button {
+/* ---- 完成按钮 ---- */
+.complete-btn {
   color: var(--success-color);
 }
-.complete-button:hover {
-  background: var(--calendar-day-hover-bg);
+.complete-btn:hover {
+  background: var(--success-color);
+  color: #fff;
 }
-.complete-button .action-icon {
-  background: rgba(16, 185, 129, 0.1);
+.complete-btn:hover .complete-icon {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
 }
-.complete-button:hover .action-icon {
-  background: rgba(16, 185, 129, 0.2);
-  transform: scale(1.1);
+.complete-icon {
+  background: rgba(16,185,129,0.1);
+  color: var(--success-color);
 }
 
-.delete-button {
+/* ---- 删除按钮 ---- */
+.delete-btn {
   color: var(--danger-color);
 }
-.delete-button:hover {
-  background: var(--calendar-day-holiday-rest-bg);
+.delete-btn:hover {
+  background: var(--danger-color);
+  color: #fff;
 }
-.delete-button .action-icon {
-  background: rgba(239, 68, 68, 0.1);
+.delete-btn:hover .delete-icon {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
 }
-.delete-button:hover .action-icon {
-  background: rgba(239, 68, 68, 0.2);
-  transform: scale(1.1);
+.delete-icon {
+  background: rgba(239,68,68,0.1);
+  color: var(--danger-color);
 }
 
 @media (max-width: 768px) {
@@ -133,9 +121,6 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
     justify-content: center;
     padding: 18px;
     font-size: 15px;
-  }
-  .action-btn:hover {
-    padding-left: 20px;
   }
 }
 </style>
