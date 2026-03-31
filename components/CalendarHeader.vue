@@ -59,10 +59,10 @@ const message = useMessage()
 
 const themeOptions = [
   { label: '🔮 极光紫', value: 'default' },
-  { label: '🌸 薄暮粉', value: 'classic' },
-  { label: '🌊 晴空蓝', value: 'orange' },
-  { label: '🌿 森野绿', value: 'green' },
-  { label: '🌙 深邃夜', value: 'dark' },
+  { label: '🌅 落日珊瑚', value: 'classic' },
+  { label: '🌊 深海碧', value: 'orange' },
+  { label: '🍵 抹茶森', value: 'green' },
+  { label: '🌃 午夜蓝', value: 'dark' },
 ]
 
 const animationOptions = [

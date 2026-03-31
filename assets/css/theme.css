@@ -75,198 +75,123 @@
   --shadow-xl: 0 20px 25px -5px rgba(124, 58, 237, 0.1);
 }
 
-/* ============ 薄暮粉 - 柔和浪漫 ============ */
+/* ============ 落日珊瑚 - 温暖治愈 ============ */
+/* 灵感来源: Dribbble 2024 暖色趋势 #f8b195 #f67280 #c06c84 */
 .classic-theme {
-  --primary-color: #ec4899;
-  --primary-light: #fce7f3;
-  --primary-dark: #be185d;
+  --primary-color: #e06c5d;
+  --primary-light: #fde8e4;
+  --primary-dark: #b84a3e;
 
-  --success-color: #22c55e;
-  --danger-color: #f43f5e;
-  --info-color: #a855f7;
-  --warning-color: #f97316;
+  --success-color: #6ab04c;
+  --danger-color: #e55039;
+  --info-color: #7c6cf0;
+  --warning-color: #f0932b;
 
-  --background-color: #fdf2f8;
+  --background-color: #fef6f0;
   --card-background: #ffffff;
-  --text-primary: #500724;
-  --text-secondary: #9d174d;
-  --border-color: #fbcfe8;
-  --hover-color: #fce7f3;
+  --text-primary: #2d2019;
+  --text-secondary: #8b6f5e;
+  --border-color: #f0d5c4;
+  --hover-color: #fef0e8;
 
   --current-month-bg: #ffffff;
-  --current-month-border: #fbcfe8;
-  --other-month-bg: #fdf2f8;
-  --other-month-border: #fce7f3;
-  --other-month-text: #f9a8d4;
+  --current-month-border: #f0d5c4;
+  --other-month-bg: #fef6f0;
+  --other-month-border: #fde8de;
+  --other-month-text: #dbb8a4;
 
-  --button-primary-bg: #ec4899;
-  --button-primary-hover-bg: #db2777;
-  --button-secondary-bg: #fdf2f8;
-  --button-secondary-hover-bg: #fce7f3;
-  --button-success-bg: #22c55e;
-  --button-success-hover-bg: #16a34a;
-  --button-danger-bg: #f43f5e;
-  --button-danger-hover-bg: #e11d48;
+  --button-primary-bg: #e06c5d;
+  --button-primary-hover-bg: #c95547;
+  --button-secondary-bg: #fef0e8;
+  --button-secondary-hover-bg: #fde2d4;
+  --button-success-bg: #6ab04c;
+  --button-success-hover-bg: #579440;
+  --button-danger-bg: #e55039;
+  --button-danger-hover-bg: #c83d28;
 
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #fbcfe8;
-  --calendar-day-hover-bg: #fdf2f8;
-  --calendar-day-current-bg: #fce7f3;
-  --calendar-day-current-border: #ec4899;
+  --calendar-day-border: #f0d5c4;
+  --calendar-day-hover-bg: #fef0e8;
+  --calendar-day-current-bg: #fde8e4;
+  --calendar-day-current-border: #e06c5d;
   --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fff7ed;
-  --calendar-day-weekend-border: #fed7aa;
-  --calendar-day-holiday-rest-bg: #ffe4e6;
-  --calendar-day-holiday-rest-border: #fda4af;
-  --calendar-day-holiday-work-bg: #fae8ff;
-  --calendar-day-holiday-work-border: #f0abfc;
+  --calendar-day-weekend-bg: #fff8ee;
+  --calendar-day-weekend-border: #f5dfa8;
+  --calendar-day-holiday-rest-bg: #fde8e4;
+  --calendar-day-holiday-rest-border: #f0b8ac;
+  --calendar-day-holiday-work-bg: #e8f4fd;
+  --calendar-day-holiday-work-border: #b8d8f0;
 
-  --todo-item-bg: #fdf2f8;
-  --todo-item-border-left: #ec4899;
-  --todo-item-completed-bg: #f0fdf4;
-  --todo-item-completed-border-left: #22c55e;
-  --todo-item-completed-text: #f9a8d4;
+  --todo-item-bg: #fef6f0;
+  --todo-item-border-left: #e06c5d;
+  --todo-item-completed-bg: #f0faf0;
+  --todo-item-completed-border-left: #6ab04c;
+  --todo-item-completed-text: #c4a08e;
 
-  --preview-bg: #fdf2f8;
-  --preview-border: #fbcfe8;
-  --preview-text: #db2777;
-  --preview-hover-bg: #fce7f3;
-  --preview-hover-border: #f9a8d4;
+  --preview-bg: #fef0e8;
+  --preview-border: #f0d5c4;
+  --preview-text: #c95547;
+  --preview-hover-bg: #fde2d4;
+  --preview-hover-border: #dbb8a4;
 
-  --badge-rest-bg: #f43f5e;
-  --badge-work-bg: #a855f7;
+  --badge-rest-bg: #e55039;
+  --badge-work-bg: #7c6cf0;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(253, 242, 248, 0.9);
-  --loading-spinner-border: #fbcfe8;
-  --loading-spinner-border-top: #ec4899;
-  --loading-text: #500724;
+  --loading-overlay-bg: rgba(254, 246, 240, 0.92);
+  --loading-spinner-border: #f0d5c4;
+  --loading-spinner-border-top: #e06c5d;
+  --loading-text: #2d2019;
 
-  --form-input-border: #fbcfe8;
-  --form-input-focus-border: #ec4899;
-  --form-input-focus-shadow: rgba(236, 72, 153, 0.2);
+  --form-input-border: #f0d5c4;
+  --form-input-focus-border: #e06c5d;
+  --form-input-focus-shadow: rgba(224, 108, 93, 0.2);
 
-  --shadow-sm: 0 1px 2px rgba(236, 72, 153, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(236, 72, 153, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(236, 72, 153, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(236, 72, 153, 0.1);
+  --shadow-sm: 0 1px 2px rgba(224, 108, 93, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(224, 108, 93, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(224, 108, 93, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(224, 108, 93, 0.1);
 }
 
-/* ============ 晴空蓝 - 清爽通透 ============ */
+/* ============ 深海碧 - 清冷高级 ============ */
+/* 灵感来源: #00a8c6 #40c0cb #005f6b 深海配色 */
 .orange-theme {
-  --primary-color: #0ea5e9;
-  --primary-light: #e0f2fe;
-  --primary-dark: #0369a1;
-
-  --success-color: #22c55e;
-  --danger-color: #ef4444;
-  --info-color: #8b5cf6;
-  --warning-color: #eab308;
-
-  --background-color: #f0f9ff;
-  --card-background: #ffffff;
-  --text-primary: #0c4a6e;
-  --text-secondary: #0369a1;
-  --border-color: #bae6fd;
-  --hover-color: #e0f2fe;
-
-  --current-month-bg: #ffffff;
-  --current-month-border: #bae6fd;
-  --other-month-bg: #f0f9ff;
-  --other-month-border: #e0f2fe;
-  --other-month-text: #7dd3fc;
-
-  --button-primary-bg: #0ea5e9;
-  --button-primary-hover-bg: #0284c7;
-  --button-secondary-bg: #f0f9ff;
-  --button-secondary-hover-bg: #e0f2fe;
-  --button-success-bg: #22c55e;
-  --button-success-hover-bg: #16a34a;
-  --button-danger-bg: #ef4444;
-  --button-danger-hover-bg: #dc2626;
-
-  --calendar-day-bg: #ffffff;
-  --calendar-day-border: #bae6fd;
-  --calendar-day-hover-bg: #f0f9ff;
-  --calendar-day-current-bg: #e0f2fe;
-  --calendar-day-current-border: #0ea5e9;
-  --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fef9c3;
-  --calendar-day-weekend-border: #fde047;
-  --calendar-day-holiday-rest-bg: #fee2e2;
-  --calendar-day-holiday-rest-border: #fca5a5;
-  --calendar-day-holiday-work-bg: #dbeafe;
-  --calendar-day-holiday-work-border: #93c5fd;
-
-  --todo-item-bg: #f0f9ff;
-  --todo-item-border-left: #0ea5e9;
-  --todo-item-completed-bg: #ecfdf5;
-  --todo-item-completed-border-left: #22c55e;
-  --todo-item-completed-text: #7dd3fc;
-
-  --preview-bg: #f0f9ff;
-  --preview-border: #bae6fd;
-  --preview-text: #0284c7;
-  --preview-hover-bg: #e0f2fe;
-  --preview-hover-border: #7dd3fc;
-
-  --badge-rest-bg: #ef4444;
-  --badge-work-bg: #0ea5e9;
-  --badge-text: #ffffff;
-
-  --loading-overlay-bg: rgba(240, 249, 255, 0.9);
-  --loading-spinner-border: #bae6fd;
-  --loading-spinner-border-top: #0ea5e9;
-  --loading-text: #0c4a6e;
-
-  --form-input-border: #bae6fd;
-  --form-input-focus-border: #0ea5e9;
-  --form-input-focus-shadow: rgba(14, 165, 233, 0.2);
-
-  --shadow-sm: 0 1px 2px rgba(14, 165, 233, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(14, 165, 233, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(14, 165, 233, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(14, 165, 233, 0.1);
-}
-
-/* ============ 森野绿 - 自然护眼 ============ */
-.green-theme {
-  --primary-color: #059669;
-  --primary-light: #d1fae5;
-  --primary-dark: #065f46;
+  --primary-color: #0891b2;
+  --primary-light: #cffafe;
+  --primary-dark: #0e7490;
 
   --success-color: #10b981;
   --danger-color: #f43f5e;
-  --info-color: #0891b2;
+  --info-color: #8b5cf6;
   --warning-color: #d97706;
 
-  --background-color: #f0fdf4;
+  --background-color: #f0fdfa;
   --card-background: #ffffff;
-  --text-primary: #14532d;
-  --text-secondary: #166534;
-  --border-color: #a7f3d0;
-  --hover-color: #dcfce7;
+  --text-primary: #134e4a;
+  --text-secondary: #115e59;
+  --border-color: #99f6e4;
+  --hover-color: #ccfbf1;
 
   --current-month-bg: #ffffff;
-  --current-month-border: #a7f3d0;
-  --other-month-bg: #f0fdf4;
-  --other-month-border: #dcfce7;
-  --other-month-text: #86efac;
+  --current-month-border: #99f6e4;
+  --other-month-bg: #f0fdfa;
+  --other-month-border: #ccfbf1;
+  --other-month-text: #5eead4;
 
-  --button-primary-bg: #059669;
-  --button-primary-hover-bg: #047857;
-  --button-secondary-bg: #f0fdf4;
-  --button-secondary-hover-bg: #dcfce7;
+  --button-primary-bg: #0891b2;
+  --button-primary-hover-bg: #0e7490;
+  --button-secondary-bg: #f0fdfa;
+  --button-secondary-hover-bg: #ccfbf1;
   --button-success-bg: #10b981;
   --button-success-hover-bg: #059669;
   --button-danger-bg: #f43f5e;
   --button-danger-hover-bg: #e11d48;
 
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #a7f3d0;
-  --calendar-day-hover-bg: #f0fdf4;
-  --calendar-day-current-bg: #d1fae5;
-  --calendar-day-current-border: #059669;
+  --calendar-day-border: #99f6e4;
+  --calendar-day-hover-bg: #f0fdfa;
+  --calendar-day-current-bg: #ccfbf1;
+  --calendar-day-current-border: #0891b2;
   --calendar-day-other-month-opacity: 0.5;
   --calendar-day-weekend-bg: #fefce8;
   --calendar-day-weekend-border: #fde047;
@@ -275,130 +200,209 @@
   --calendar-day-holiday-work-bg: #dbeafe;
   --calendar-day-holiday-work-border: #93c5fd;
 
-  --todo-item-bg: #f0fdf4;
-  --todo-item-border-left: #059669;
-  --todo-item-completed-bg: #f0fdf4;
+  --todo-item-bg: #f0fdfa;
+  --todo-item-border-left: #0891b2;
+  --todo-item-completed-bg: #ecfdf5;
   --todo-item-completed-border-left: #10b981;
-  --todo-item-completed-text: #86efac;
+  --todo-item-completed-text: #5eead4;
 
-  --preview-bg: #f0fdf4;
-  --preview-border: #a7f3d0;
-  --preview-text: #047857;
-  --preview-hover-bg: #dcfce7;
-  --preview-hover-border: #6ee7b7;
+  --preview-bg: #f0fdfa;
+  --preview-border: #99f6e4;
+  --preview-text: #0e7490;
+  --preview-hover-bg: #ccfbf1;
+  --preview-hover-border: #5eead4;
 
   --badge-rest-bg: #f43f5e;
   --badge-work-bg: #0891b2;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(240, 253, 244, 0.9);
-  --loading-spinner-border: #a7f3d0;
-  --loading-spinner-border-top: #059669;
-  --loading-text: #14532d;
+  --loading-overlay-bg: rgba(240, 253, 250, 0.92);
+  --loading-spinner-border: #99f6e4;
+  --loading-spinner-border-top: #0891b2;
+  --loading-text: #134e4a;
 
-  --form-input-border: #a7f3d0;
-  --form-input-focus-border: #059669;
-  --form-input-focus-shadow: rgba(5, 150, 105, 0.2);
+  --form-input-border: #99f6e4;
+  --form-input-focus-border: #0891b2;
+  --form-input-focus-shadow: rgba(8, 145, 178, 0.2);
 
-  --shadow-sm: 0 1px 2px rgba(5, 150, 105, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(5, 150, 105, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(5, 150, 105, 0.1);
+  --shadow-sm: 0 1px 2px rgba(8, 145, 178, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(8, 145, 178, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(8, 145, 178, 0.1);
 }
 
-/* ============ 深邃夜 - 深色模式 ============ */
+/* ============ 抹茶森 - 自然文艺 ============ */
+/* 灵感来源: #594f4f #45ada8 #9de0ad #e5fcc2 自然绿调 */
+.green-theme {
+  --primary-color: #2d9f8f;
+  --primary-light: #d5f0ec;
+  --primary-dark: #1a7a6d;
+
+  --success-color: #45ada8;
+  --danger-color: #d95b43;
+  --info-color: #53777a;
+  --warning-color: #e97f02;
+
+  --background-color: #f4f9f2;
+  --card-background: #ffffff;
+  --text-primary: #2d3436;
+  --text-secondary: #594f4f;
+  --border-color: #c8e6c9;
+  --hover-color: #e8f5e9;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #c8e6c9;
+  --other-month-bg: #f4f9f2;
+  --other-month-border: #e0f0e0;
+  --other-month-text: #a5d6a7;
+
+  --button-primary-bg: #2d9f8f;
+  --button-primary-hover-bg: #1a7a6d;
+  --button-secondary-bg: #f4f9f2;
+  --button-secondary-hover-bg: #e0f0e0;
+  --button-success-bg: #45ada8;
+  --button-success-hover-bg: #3a9691;
+  --button-danger-bg: #d95b43;
+  --button-danger-hover-bg: #c04a34;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #c8e6c9;
+  --calendar-day-hover-bg: #f4f9f2;
+  --calendar-day-current-bg: #d5f0ec;
+  --calendar-day-current-border: #2d9f8f;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fef9ee;
+  --calendar-day-weekend-border: #f5dfa8;
+  --calendar-day-holiday-rest-bg: #fde8e4;
+  --calendar-day-holiday-rest-border: #f0b8ac;
+  --calendar-day-holiday-work-bg: #e3f2fd;
+  --calendar-day-holiday-work-border: #90caf9;
+
+  --todo-item-bg: #f4f9f2;
+  --todo-item-border-left: #2d9f8f;
+  --todo-item-completed-bg: #f0faf0;
+  --todo-item-completed-border-left: #45ada8;
+  --todo-item-completed-text: #81c784;
+
+  --preview-bg: #e8f5e9;
+  --preview-border: #c8e6c9;
+  --preview-text: #1a7a6d;
+  --preview-hover-bg: #d5f0ec;
+  --preview-hover-border: #a5d6a7;
+
+  --badge-rest-bg: #d95b43;
+  --badge-work-bg: #53777a;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(244, 249, 242, 0.92);
+  --loading-spinner-border: #c8e6c9;
+  --loading-spinner-border-top: #2d9f8f;
+  --loading-text: #2d3436;
+
+  --form-input-border: #c8e6c9;
+  --form-input-focus-border: #2d9f8f;
+  --form-input-focus-shadow: rgba(45, 159, 143, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(45, 159, 143, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(45, 159, 143, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(45, 159, 143, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(45, 159, 143, 0.1);
+}
+
+/* ============ 午夜蓝 - 商务沉稳 ============ */
+/* 灵感来源: #1b325f #9cc4e4 #3a89c9 专业商务蓝 */
 .dark-mode:root,
 .dark-theme {
-  --primary-color: #a78bfa;
-  --primary-light: rgba(167, 139, 250, 0.15);
-  --primary-dark: #7c3aed;
+  --primary-color: #60a5fa;
+  --primary-light: rgba(96, 165, 250, 0.12);
+  --primary-dark: #3b82f6;
 
   --success-color: #34d399;
   --danger-color: #fb7185;
-  --info-color: #818cf8;
+  --info-color: #a78bfa;
   --warning-color: #fbbf24;
 
-  --background-color: #0f0d1a;
-  --card-background: #1a1625;
+  --background-color: #0b1120;
+  --card-background: #111827;
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
-  --border-color: #2e2945;
-  --hover-color: #231f35;
+  --border-color: #1e3a5f;
+  --hover-color: #172033;
 
-  --current-month-bg: #1a1625;
-  --current-month-border: #2e2945;
-  --other-month-bg: #0f0d1a;
-  --other-month-border: #1a1625;
-  --other-month-text: #4c4566;
+  --current-month-bg: #111827;
+  --current-month-border: #1e3a5f;
+  --other-month-bg: #0b1120;
+  --other-month-border: #111827;
+  --other-month-text: #334155;
 
-  --button-primary-bg: #7c3aed;
-  --button-primary-hover-bg: #6d28d9;
-  --button-secondary-bg: #231f35;
-  --button-secondary-hover-bg: #2e2945;
+  --button-primary-bg: #3b82f6;
+  --button-primary-hover-bg: #2563eb;
+  --button-secondary-bg: #172033;
+  --button-secondary-hover-bg: #1e3a5f;
   --button-success-bg: #059669;
   --button-success-hover-bg: #047857;
   --button-danger-bg: #e11d48;
   --button-danger-hover-bg: #be123c;
 
-  --calendar-day-bg: #1a1625;
-  --calendar-day-border: #2e2945;
-  --calendar-day-hover-bg: #231f35;
-  --calendar-day-current-bg: #2e2945;
-  --calendar-day-current-border: #a78bfa;
-  --calendar-day-other-month-opacity: 0.4;
-  --calendar-day-weekend-bg: #1e1b0f;
+  --calendar-day-bg: #111827;
+  --calendar-day-border: #1e3a5f;
+  --calendar-day-hover-bg: #172033;
+  --calendar-day-current-bg: #1e3a5f;
+  --calendar-day-current-border: #60a5fa;
+  --calendar-day-other-month-opacity: 0.35;
+  --calendar-day-weekend-bg: #1a1608;
   --calendar-day-weekend-border: #3d3520;
   --calendar-day-holiday-rest-bg: #1f0d14;
   --calendar-day-holiday-rest-border: #3d1525;
   --calendar-day-holiday-work-bg: #0d1720;
   --calendar-day-holiday-work-border: #1a3040;
 
-  --todo-item-bg: #231f35;
-  --todo-item-border-left: #a78bfa;
+  --todo-item-bg: #172033;
+  --todo-item-border-left: #60a5fa;
   --todo-item-completed-bg: #0d2818;
   --todo-item-completed-border-left: #34d399;
-  --todo-item-completed-text: #6b7280;
+  --todo-item-completed-text: #64748b;
 
-  --preview-bg: rgba(167, 139, 250, 0.1);
-  --preview-border: rgba(167, 139, 250, 0.25);
-  --preview-text: #c4b5fd;
-  --preview-hover-bg: rgba(167, 139, 250, 0.15);
-  --preview-hover-border: rgba(167, 139, 250, 0.4);
+  --preview-bg: rgba(96, 165, 250, 0.08);
+  --preview-border: rgba(96, 165, 250, 0.2);
+  --preview-text: #93c5fd;
+  --preview-hover-bg: rgba(96, 165, 250, 0.12);
+  --preview-hover-border: rgba(96, 165, 250, 0.35);
 
   --badge-rest-bg: #e11d48;
-  --badge-work-bg: #6366f1;
+  --badge-work-bg: #3b82f6;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(15, 13, 26, 0.92);
-  --loading-spinner-border: #2e2945;
-  --loading-spinner-border-top: #a78bfa;
+  --loading-overlay-bg: rgba(11, 17, 32, 0.95);
+  --loading-spinner-border: #1e3a5f;
+  --loading-spinner-border-top: #60a5fa;
   --loading-text: #e2e8f0;
 
-  --form-input-border: #2e2945;
-  --form-input-focus-border: #a78bfa;
-  --form-input-focus-shadow: rgba(167, 139, 250, 0.2);
+  --form-input-border: #1e3a5f;
+  --form-input-focus-border: #60a5fa;
+  --form-input-focus-shadow: rgba(96, 165, 250, 0.2);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 
   color-scheme: dark;
 }
 
-/* 深色模式下的文本修正 */
+/* 深色模式文本修正 */
 .dark-theme .calendar-day .day-number {
   color: #e2e8f0;
 }
 .dark-theme .other-month .day-number {
-  color: #4c4566;
+  color: #334155;
 }
 .dark-theme .current-day .day-number {
-  color: #a78bfa;
+  color: #60a5fa;
 }
 .dark-theme .holiday-rest-day .holiday-name {
   color: #fb7185;
 }
 .dark-theme .holiday-work-day .holiday-name {
-  color: #818cf8;
+  color: #a78bfa;
 }
