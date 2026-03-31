@@ -71,17 +71,35 @@ const completedText = computed(() => props.isCompleted ? '撤销完成' : '完�
   transition: background-color 0.15s;
 }
 
-/* ---- 完成 ---- */
-.complete-btn { color: var(--success-color); }
-.complete-btn .action-icon { background: rgba(16,185,129,0.1); }
-.complete-btn:hover { background: var(--success-color); color: #fff; }
-.complete-btn:hover .action-icon { background: rgba(255,255,255,0.2); }
+/* ---- 完成：用主题主色 ---- */
+.complete-btn {
+  color: var(--primary-color);
+}
+.complete-btn .action-icon {
+  background: var(--primary-light);
+}
+.complete-btn:hover {
+  background: var(--primary-color);
+  color: var(--on-primary);
+}
+.complete-btn:hover .action-icon {
+  background: rgba(255,255,255,0.2);
+}
 
-/* ---- 删除 ---- */
-.delete-btn { color: var(--danger-color); }
-.delete-btn .action-icon { background: rgba(239,68,68,0.1); }
-.delete-btn:hover { background: var(--danger-color); color: #fff; }
-.delete-btn:hover .action-icon { background: rgba(255,255,255,0.2); }
+/* ---- 删除：用 danger 色 ---- */
+.delete-btn {
+  color: var(--danger-color);
+}
+.delete-btn .action-icon {
+  background: rgba(239,68,68,0.08);
+}
+.delete-btn:hover {
+  background: var(--danger-color);
+  color: #fff;
+}
+.delete-btn:hover .action-icon {
+  background: rgba(255,255,255,0.2);
+}
 
 @media (max-width: 768px) {
   .todo-actions {

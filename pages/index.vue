@@ -149,7 +149,7 @@ const handleAddTodo = async (todoData) => {
     })
 
     if (result.success) {
-      todos.value.push(result.todo)
+      todos.value = [...todos.value, result.todo]
       return true
     }
     return false
@@ -198,16 +198,15 @@ const handleCompleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
         })
         if (result.success) {
           if (result.completed) {
-            completedInstances.value.push({
+            completedInstances.value = [...completedInstances.value, {
               todo_id: parseInt(todoId),
               date: todoDate,
               user_id: userId.value,
-            })
+            }]
           } else {
-            const index = completedInstances.value.findIndex(
-              (instance) => instance.todo_id == todoId && instance.date === todoDate
+            completedInstances.value = completedInstances.value.filter(
+              (instance) => !(instance.todo_id == todoId && instance.date === todoDate)
             )
-            if (index >= 0) completedInstances.value.splice(index, 1)
           }
           return true
         }
@@ -250,11 +249,11 @@ const handleDeleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
           body: { todoId, date: todoDate },
         })
         if (result.success) {
-          deletedInstances.value.push({
+          deletedInstances.value = [...deletedInstances.value, {
             todo_id: parseInt(todoId),
             date: todoDate,
             user_id: userId.value,
-          })
+          }]
         }
       }
     }

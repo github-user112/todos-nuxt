@@ -1,22 +1,14 @@
 <template>
   <div class="calendar-header">
     <div class="header-left">
-      <NButton quaternary circle size="large" @click="$emit('prevMonth')">
-        <template #icon><span>◀</span></template>
-      </NButton>
+      <button class="nav-btn" @click="$emit('prevMonth')">◀</button>
       <h2 class="calendar-title">{{ currentYear }}年{{ currentMonth + 1 }}月</h2>
-      <NButton quaternary circle size="large" @click="$emit('nextMonth')">
-        <template #icon><span>▶</span></template>
-      </NButton>
-      <NButton type="primary" size="small" @click="$emit('goToToday')" class="today-btn">
-        今天
-      </NButton>
+      <button class="nav-btn" @click="$emit('nextMonth')">▶</button>
+      <button class="today-btn" @click="$emit('goToToday')">今天</button>
     </div>
 
     <div class="header-right">
-      <NButton type="success" size="small" @click="copyUrlToClipboard" class="share-btn">
-        📤 分享
-      </NButton>
+      <button class="share-btn" @click="copyUrlToClipboard">📤 分享</button>
 
       <div class="selector-group desktop-only">
         <NSelect
@@ -64,7 +56,7 @@
 </template>
 
 <script setup>
-import { NButton, NSelect, useMessage } from 'naive-ui'
+import { NSelect, useMessage } from 'naive-ui'
 
 defineProps({
   currentYear: { type: Number, required: true },
@@ -103,12 +95,12 @@ const copyUrlToClipboard = () => {
   border-radius: 16px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s;
 }
 .calendar-header:hover {
   box-shadow: var(--shadow-lg);
 }
+
 .header-left {
   display: flex;
   align-items: center;
@@ -119,6 +111,7 @@ const copyUrlToClipboard = () => {
   align-items: center;
   gap: 10px;
 }
+
 .calendar-title {
   margin: 0;
   font-size: 1.4rem;
@@ -128,20 +121,75 @@ const copyUrlToClipboard = () => {
   min-width: 160px;
   text-align: center;
 }
-.today-btn { font-weight: 600; letter-spacing: 1px; }
-.share-btn { font-weight: 500; }
-.selector-group { display: flex; align-items: center; }
+
+/* ---- 按钮统一用主题变量 ---- */
+.nav-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-background);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.nav-btn:hover {
+  background: var(--hover-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.today-btn {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: var(--on-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  letter-spacing: 1px;
+}
+.today-btn:hover {
+  background: var(--primary-dark);
+}
+
+.share-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-background);
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.share-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--accent-color);
+}
+
+.selector-group {
+  display: flex;
+  align-items: center;
+}
+
 .contact-link {
   font-size: 18px;
   text-decoration: none;
   padding: 6px 8px;
   border-radius: 8px;
-  transition: all 0.2s;
+  transition: background-color 0.15s;
   line-height: 1;
 }
 .contact-link:hover {
   background: var(--hover-color);
-  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
