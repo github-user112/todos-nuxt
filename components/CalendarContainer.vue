@@ -349,7 +349,9 @@ function getTodosForDate(date, dateStr) {
   props.todos.forEach((todo) => {
     if (isInstanceDeleted(todo.id, dateStr)) return
 
-    // 非重复待办：直接匹配原始日期
+    const displayDate = todo.next_date || todo.date
+
+    // 非重复待办：直接匹配日期
     if (!todo.repeat_type || todo.repeat_type === 'none') {
       if (todo.date === dateStr) {
         const isCompleted = todo.completed || isInstanceCompleted(todo.id, dateStr)
@@ -358,7 +360,13 @@ function getTodosForDate(date, dateStr) {
       return
     }
 
-    // 重复待办：通过 shouldShowRepeatingTodo 计算是否显示
+    // 重复待办：next_date 匹配，或者通过 shouldShowRepeatingTodo 计算
+    if (displayDate === dateStr) {
+      const isCompleted = isInstanceCompleted(todo.id, dateStr)
+      result.push({ ...todo, displayDate, isCompleted })
+      return
+    }
+
     const originalDate = new Date(todo.date)
     const currentDateObj = new Date(dateStr)
     const interval = todo.repeat_interval || 1
