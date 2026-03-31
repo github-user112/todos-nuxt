@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-grid">
+  <div class="calendar-grid" :style="{ gridTemplateRows: `36px repeat(${totalWeeks}, 1fr)` }">
     <div class="empty-corner"></div>
 
     <div v-for="(day, index) in weekdays" :key="day" :class="['calendar-weekday', { 'weekend-header': isWeekendHeader(index) }]">
@@ -64,7 +64,6 @@ defineEmits(['openAddTodoPopup', 'openTodoActions'])
 .calendar-grid {
   display: grid;
   grid-template-columns: 40px repeat(7, 1fr);
-  grid-template-rows: 36px repeat(6, 1fr);
   gap: 4px;
   flex: 1;
   min-height: 0;
@@ -113,7 +112,6 @@ defineEmits(['openAddTodoPopup', 'openTodoActions'])
   .calendar-grid {
     gap: 2px;
     grid-template-columns: 24px repeat(7, 1fr);
-    grid-template-rows: 30px repeat(6, 1fr);
     height: calc(100vh - 56px);
   }
   .calendar-weekday {

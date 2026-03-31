@@ -243,18 +243,35 @@ let touchStartX = 0
 let touchStartY = 0
 
 // --- Calendar days computation ---
-const ROWS = 6 // fixed 6 rows for consistent height
+// Dynamic row count: computed per view mode
+const totalWeeks = computed(() => {
+  if (viewMode.value === 'focus-today') return 5
+
+  // full-month: calculate how many weeks the month spans
+  const isMonday = weekStart.value === 'monday'
+  const firstOfMonth = new Date(currentYear.value, currentMonth.value, 1)
+  const lastOfMonth = new Date(currentYear.value, currentMonth.value + 1, 0)
+  const dow1 = firstOfMonth.getDay()
+  const dowN = lastOfMonth.getDay()
+  const offsetStart = isMonday ? (dow1 === 0 ? 6 : dow1 - 1) : dow1
+  const offsetEnd = isMonday ? (dowN === 0 ? 6 : dowN - 1) : dowN
+  // total cells from start-of-week of 1st to end-of-week of last day
+  const totalCells = offsetStart + lastOfMonth.getDate() + (6 - offsetEnd)
+  return Math.ceil(totalCells / 7)
+})
+
 const calendarDays = computed(() => {
   const realToday = new Date()
   realToday.setHours(0, 0, 0, 0)
 
   const isMonday = weekStart.value === 'monday'
-  const totalDays = ROWS * 7
+  const weeks = totalWeeks.value
+  const totalDays = weeks * 7
 
   let startDate
 
   if (viewMode.value === 'full-month') {
-    // Full month: start from 1st of current month, fill full weeks
+    // Full month: start from the week containing 1st of month
     const firstOfMonth = new Date(currentYear.value, currentMonth.value, 1)
     firstOfMonth.setHours(0, 0, 0, 0)
     const dow = firstOfMonth.getDay()
@@ -262,7 +279,7 @@ const calendarDays = computed(() => {
     startDate = new Date(firstOfMonth)
     startDate.setDate(startDate.getDate() - offset)
   } else {
-    // Focus today (full week): current week centered with surrounding weeks
+    // Focus today: today's week + 2 weeks before + 2 weeks after = 5 weeks
     const gridDate = new Date(currentDate.value)
     gridDate.setHours(0, 0, 0, 0)
     const dow = gridDate.getDay()
@@ -270,9 +287,9 @@ const calendarDays = computed(() => {
     const thisWeekStart = new Date(gridDate)
     thisWeekStart.setDate(gridDate.getDate() - offsetToStart)
     thisWeekStart.setHours(0, 0, 0, 0)
-    // Go back 1 week so current week is row 1-2
+    // 2 weeks before current week
     startDate = new Date(thisWeekStart)
-    startDate.setDate(startDate.getDate() - 7)
+    startDate.setDate(startDate.getDate() - 14)
   }
   startDate.setHours(0, 0, 0, 0)
 
@@ -309,8 +326,8 @@ const calendarDays = computed(() => {
 // Week numbers
 const weekNumbers = computed(() => {
   const weeks = []
-  const totalWeeks = ROWS
-  for (let i = 0; i < totalWeeks; i++) {
+  const total = totalWeeks.value
+  for (let i = 0; i < total; i++) {
     const firstDayOfWeek = new Date(calendarDays.value[i * 7].date)
     const dayOfWeek = firstDayOfWeek.getDay()
     const isMonday = weekStart.value === 'monday'
