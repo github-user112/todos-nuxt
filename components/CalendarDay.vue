@@ -242,17 +242,14 @@ function getHolidayName(holiday) {
   background: var(--todo-item-bg);
   border-radius: 6px;
   border-left: 3px solid var(--todo-item-border-left);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s;
   cursor: pointer;
 }
 .todo-item:hover {
-  background: var(--hover-color);
-  transform: translateX(3px);
-  box-shadow: var(--shadow-md);
+  background: var(--todo-item-hover-bg);
 }
 .todo-item:active {
-  transform: translateX(3px) scale(0.98);
+  opacity: 0.8;
 }
 .todo-item.completed {
   text-decoration: line-through;
