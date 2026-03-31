@@ -3,6 +3,7 @@
   --primary-color: #7c3aed;
   --primary-light: #ede9fe;
   --primary-dark: #5b21b6;
+  --accent-color: #a78bfa;
 
   --success-color: #10b981;
   --danger-color: #ef4444;
@@ -60,7 +61,7 @@
   --badge-work-bg: #6366f1;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(250, 245, 255, 0.9);
+  --loading-overlay-bg: rgba(250, 245, 255, 0.92);
   --loading-spinner-border: #e9d5ff;
   --loading-spinner-border-top: #7c3aed;
   --loading-text: #1e1b4b;
@@ -73,249 +74,746 @@
   --shadow-md: 0 4px 6px -1px rgba(124, 58, 237, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(124, 58, 237, 0.1);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
 }
 
-/* ============ 落日珊瑚 - 温暖治愈 ============ */
-/* 灵感来源: Dribbble 2024 暖色趋势 #f8b195 #f67280 #c06c84 */
-.classic-theme {
-  --primary-color: #e06c5d;
-  --primary-light: #fde8e4;
-  --primary-dark: #b84a3e;
+/* ============ 深邃晨曦 (Deep Dawn) #013475 + #fe893a ============ */
+.theme-deep-dawn {
+  --primary-color: #013475;
+  --primary-light: #e0e8f5;
+  --primary-dark: #011e45;
+  --accent-color: #fe893a;
 
-  --success-color: #6ab04c;
-  --danger-color: #e55039;
-  --info-color: #7c6cf0;
-  --warning-color: #f0932b;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --info-color: #3b82f6;
+  --warning-color: #f59e0b;
 
-  --background-color: #fef6f0;
+  --background-color: #f4f7fb;
   --card-background: #ffffff;
-  --text-primary: #2d2019;
-  --text-secondary: #8b6f5e;
-  --border-color: #f0d5c4;
-  --hover-color: #fef0e8;
+  --text-primary: #011e45;
+  --text-secondary: #4a6590;
+  --border-color: #c8d6ea;
+  --hover-color: #edf1f8;
 
   --current-month-bg: #ffffff;
-  --current-month-border: #f0d5c4;
-  --other-month-bg: #fef6f0;
-  --other-month-border: #fde8de;
-  --other-month-text: #dbb8a4;
+  --current-month-border: #c8d6ea;
+  --other-month-bg: #f4f7fb;
+  --other-month-border: #edf1f8;
+  --other-month-text: #94b0d4;
 
-  --button-primary-bg: #e06c5d;
-  --button-primary-hover-bg: #c95547;
-  --button-secondary-bg: #fef0e8;
-  --button-secondary-hover-bg: #fde2d4;
-  --button-success-bg: #6ab04c;
-  --button-success-hover-bg: #579440;
-  --button-danger-bg: #e55039;
-  --button-danger-hover-bg: #c83d28;
+  --button-primary-bg: #013475;
+  --button-primary-hover-bg: #012654;
+  --button-secondary-bg: #f4f7fb;
+  --button-secondary-hover-bg: #edf1f8;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
 
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #f0d5c4;
-  --calendar-day-hover-bg: #fef0e8;
-  --calendar-day-current-bg: #fde8e4;
-  --calendar-day-current-border: #e06c5d;
+  --calendar-day-border: #c8d6ea;
+  --calendar-day-hover-bg: #f4f7fb;
+  --calendar-day-current-bg: #e0e8f5;
+  --calendar-day-current-border: #013475;
   --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fff8ee;
-  --calendar-day-weekend-border: #f5dfa8;
-  --calendar-day-holiday-rest-bg: #fde8e4;
-  --calendar-day-holiday-rest-border: #f0b8ac;
-  --calendar-day-holiday-work-bg: #e8f4fd;
-  --calendar-day-holiday-work-border: #b8d8f0;
+  --calendar-day-weekend-bg: #fff5eb;
+  --calendar-day-weekend-border: #fedcba;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fecaca;
+  --calendar-day-holiday-work-bg: #e0e8f5;
+  --calendar-day-holiday-work-border: #b8ccee;
 
-  --todo-item-bg: #fef6f0;
-  --todo-item-border-left: #e06c5d;
-  --todo-item-completed-bg: #f0faf0;
-  --todo-item-completed-border-left: #6ab04c;
-  --todo-item-completed-text: #c4a08e;
+  --todo-item-bg: #f4f7fb;
+  --todo-item-border-left: #fe893a;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #7a96bf;
 
-  --preview-bg: #fef0e8;
-  --preview-border: #f0d5c4;
-  --preview-text: #c95547;
-  --preview-hover-bg: #fde2d4;
-  --preview-hover-border: #dbb8a4;
+  --preview-bg: #f4f7fb;
+  --preview-border: #c8d6ea;
+  --preview-text: #013475;
+  --preview-hover-bg: #edf1f8;
+  --preview-hover-border: #94b0d4;
 
-  --badge-rest-bg: #e55039;
-  --badge-work-bg: #7c6cf0;
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #013475;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(254, 246, 240, 0.92);
-  --loading-spinner-border: #f0d5c4;
-  --loading-spinner-border-top: #e06c5d;
-  --loading-text: #2d2019;
+  --loading-overlay-bg: rgba(244, 247, 251, 0.95);
+  --loading-spinner-border: #c8d6ea;
+  --loading-spinner-border-top: #fe893a;
+  --loading-text: #011e45;
 
-  --form-input-border: #f0d5c4;
-  --form-input-focus-border: #e06c5d;
-  --form-input-focus-shadow: rgba(224, 108, 93, 0.2);
+  --form-input-border: #c8d6ea;
+  --form-input-focus-border: #013475;
+  --form-input-focus-shadow: rgba(1, 52, 117, 0.2);
 
-  --shadow-sm: 0 1px 2px rgba(224, 108, 93, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(224, 108, 93, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(224, 108, 93, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(224, 108, 93, 0.1);
+  --shadow-sm: 0 1px 2px rgba(1, 52, 117, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(1, 52, 117, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(1, 52, 117, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(1, 52, 117, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
 }
 
-/* ============ 深海碧 - 清冷高级 ============ */
-/* 灵感来源: #00a8c6 #40c0cb #005f6b 深海配色 */
-.orange-theme {
-  --primary-color: #0891b2;
-  --primary-light: #cffafe;
-  --primary-dark: #0e7490;
+/* ============ 暮光玫瑰 (Twilight Rose) #efa4c2 + #2e4e8c ============ */
+.theme-twilight-rose {
+  --primary-color: #c2577e;
+  --primary-light: #fce4ee;
+  --primary-dark: #943d5e;
+  --accent-color: #2e4e8c;
 
-  --success-color: #10b981;
-  --danger-color: #f43f5e;
-  --info-color: #8b5cf6;
-  --warning-color: #d97706;
+  --success-color: #22c55e;
+  --danger-color: #e55039;
+  --info-color: #2e4e8c;
+  --warning-color: #f0932b;
 
-  --background-color: #f0fdfa;
+  --background-color: #fdf5f9;
   --card-background: #ffffff;
-  --text-primary: #134e4a;
-  --text-secondary: #115e59;
-  --border-color: #99f6e4;
-  --hover-color: #ccfbf1;
+  --text-primary: #4a1e30;
+  --text-secondary: #8c5a72;
+  --border-color: #f0d0e0;
+  --hover-color: #fce4ee;
 
   --current-month-bg: #ffffff;
-  --current-month-border: #99f6e4;
-  --other-month-bg: #f0fdfa;
-  --other-month-border: #ccfbf1;
-  --other-month-text: #5eead4;
+  --current-month-border: #f0d0e0;
+  --other-month-bg: #fdf5f9;
+  --other-month-border: #fce4ee;
+  --other-month-text: #dba4c0;
 
-  --button-primary-bg: #0891b2;
-  --button-primary-hover-bg: #0e7490;
-  --button-secondary-bg: #f0fdfa;
-  --button-secondary-hover-bg: #ccfbf1;
-  --button-success-bg: #10b981;
-  --button-success-hover-bg: #059669;
-  --button-danger-bg: #f43f5e;
-  --button-danger-hover-bg: #e11d48;
+  --button-primary-bg: #c2577e;
+  --button-primary-hover-bg: #a64666;
+  --button-secondary-bg: #fdf5f9;
+  --button-secondary-hover-bg: #fce4ee;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #e55039;
+  --button-danger-hover-bg: #c04030;
 
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #99f6e4;
-  --calendar-day-hover-bg: #f0fdfa;
-  --calendar-day-current-bg: #ccfbf1;
-  --calendar-day-current-border: #0891b2;
+  --calendar-day-border: #f0d0e0;
+  --calendar-day-hover-bg: #fdf5f9;
+  --calendar-day-current-bg: #fce4ee;
+  --calendar-day-current-border: #c2577e;
   --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fefce8;
-  --calendar-day-weekend-border: #fde047;
-  --calendar-day-holiday-rest-bg: #ffe4e6;
+  --calendar-day-weekend-bg: #eef2fa;
+  --calendar-day-weekend-border: #c8d6f0;
+  --calendar-day-holiday-rest-bg: #fee2e2;
   --calendar-day-holiday-rest-border: #fda4af;
-  --calendar-day-holiday-work-bg: #dbeafe;
-  --calendar-day-holiday-work-border: #93c5fd;
+  --calendar-day-holiday-work-bg: #eef2fa;
+  --calendar-day-holiday-work-border: #c8d6f0;
 
-  --todo-item-bg: #f0fdfa;
-  --todo-item-border-left: #0891b2;
+  --todo-item-bg: #fdf5f9;
+  --todo-item-border-left: #2e4e8c;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #bfa0b4;
+
+  --preview-bg: #fdf5f9;
+  --preview-border: #f0d0e0;
+  --preview-text: #943d5e;
+  --preview-hover-bg: #fce4ee;
+  --preview-hover-border: #dba4c0;
+
+  --badge-rest-bg: #e55039;
+  --badge-work-bg: #2e4e8c;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(253, 245, 249, 0.95);
+  --loading-spinner-border: #f0d0e0;
+  --loading-spinner-border-top: #c2577e;
+  --loading-text: #4a1e30;
+
+  --form-input-border: #f0d0e0;
+  --form-input-focus-border: #c2577e;
+  --form-input-focus-shadow: rgba(194, 87, 126, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(194, 87, 126, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(194, 87, 126, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(194, 87, 126, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(194, 87, 126, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+}
+
+/* ============ 琥珀夜幕 (Amber Night) #F18F4D + #1E2F5A ============ */
+.theme-amber-night {
+  --primary-color: #F18F4D;
+  --primary-light: #fde8d6;
+  --primary-dark: #d07030;
+  --accent-color: #1E2F5A;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --info-color: #3b82f6;
+  --warning-color: #d97706;
+
+  --background-color: #fef8f2;
+  --card-background: #ffffff;
+  --text-primary: #1E2F5A;
+  --text-secondary: #5a6d94;
+  --border-color: #f0d8be;
+  --hover-color: #fef0e2;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #f0d8be;
+  --other-month-bg: #fef8f2;
+  --other-month-border: #fde8d6;
+  --other-month-text: #d4a878;
+
+  --button-primary-bg: #F18F4D;
+  --button-primary-hover-bg: #d87838;
+  --button-secondary-bg: #fef8f2;
+  --button-secondary-hover-bg: #fde8d6;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #f0d8be;
+  --calendar-day-hover-bg: #fef0e2;
+  --calendar-day-current-bg: #fde8d6;
+  --calendar-day-current-border: #F18F4D;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #eef2fa;
+  --calendar-day-weekend-border: #c8d4ee;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #eef2fa;
+  --calendar-day-holiday-work-border: #c8d4ee;
+
+  --todo-item-bg: #fef8f2;
+  --todo-item-border-left: #1E2F5A;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #a8b4cc;
+
+  --preview-bg: #fef0e2;
+  --preview-border: #f0d8be;
+  --preview-text: #d07030;
+  --preview-hover-bg: #fde8d6;
+  --preview-hover-border: #d4a878;
+
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #1E2F5A;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(254, 248, 242, 0.95);
+  --loading-spinner-border: #f0d8be;
+  --loading-spinner-border-top: #F18F4D;
+  --loading-text: #1E2F5A;
+
+  --form-input-border: #f0d8be;
+  --form-input-focus-border: #F18F4D;
+  --form-input-focus-shadow: rgba(241, 143, 77, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(30, 47, 90, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(30, 47, 90, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(30, 47, 90, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(30, 47, 90, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+}
+
+/* ============ 珊瑚柔沙 (Coral Sand) #EE566D + #EFE4C4 ============ */
+.theme-coral-sand {
+  --primary-color: #EE566D;
+  --primary-light: #fde8ec;
+  --primary-dark: #c83e54;
+  --accent-color: #b89e50;
+
+  --success-color: #22c55e;
+  --danger-color: #dc2626;
+  --info-color: #3b82f6;
+  --warning-color: #d97706;
+
+  --background-color: #fdf8f0;
+  --card-background: #ffffff;
+  --text-primary: #3d1a22;
+  --text-secondary: #8c5a64;
+  --border-color: #e8d8c0;
+  --hover-color: #fdf0e4;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #e8d8c0;
+  --other-month-bg: #fdf8f0;
+  --other-month-border: #f0e4d0;
+  --other-month-text: #c8b898;
+
+  --button-primary-bg: #EE566D;
+  --button-primary-hover-bg: #d44058;
+  --button-secondary-bg: #fdf8f0;
+  --button-secondary-hover-bg: #f0e4d0;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #dc2626;
+  --button-danger-hover-bg: #b91c1c;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #e8d8c0;
+  --calendar-day-hover-bg: #fdf0e4;
+  --calendar-day-current-bg: #fde8ec;
+  --calendar-day-current-border: #EE566D;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fdf5e8;
+  --calendar-day-weekend-border: #f0dcc0;
+  --calendar-day-holiday-rest-bg: #fde8ec;
+  --calendar-day-holiday-rest-border: #f0a8b4;
+  --calendar-day-holiday-work-bg: #eef2fa;
+  --calendar-day-holiday-work-border: #c8d6f0;
+
+  --todo-item-bg: #fdf8f0;
+  --todo-item-border-left: #EE566D;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #b8a888;
+
+  --preview-bg: #fdf0e4;
+  --preview-border: #e8d8c0;
+  --preview-text: #c83e54;
+  --preview-hover-bg: #fde8d6;
+  --preview-hover-border: #c8b898;
+
+  --badge-rest-bg: #dc2626;
+  --badge-work-bg: #b89e50;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(253, 248, 240, 0.95);
+  --loading-spinner-border: #e8d8c0;
+  --loading-spinner-border-top: #EE566D;
+  --loading-text: #3d1a22;
+
+  --form-input-border: #e8d8c0;
+  --form-input-focus-border: #EE566D;
+  --form-input-focus-shadow: rgba(238, 86, 109, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(238, 86, 109, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(238, 86, 109, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(238, 86, 109, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(238, 86, 109, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+}
+
+/* ============ 蔚蓝烈焰 (Azure Flame) #0F64B5 + #FF6863 ============ */
+.theme-azure-flame {
+  --primary-color: #0F64B5;
+  --primary-light: #dceefb;
+  --primary-dark: #0a4a85;
+  --accent-color: #FF6863;
+
+  --success-color: #22c55e;
+  --danger-color: #FF6863;
+  --info-color: #0F64B5;
+  --warning-color: #f59e0b;
+
+  --background-color: #f2f8fd;
+  --card-background: #ffffff;
+  --text-primary: #0a2e52;
+  --text-secondary: #4a7aaa;
+  --border-color: #b8d8f0;
+  --hover-color: #e4f0fa;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #b8d8f0;
+  --other-month-bg: #f2f8fd;
+  --other-month-border: #dceefb;
+  --other-month-text: #88b8e0;
+
+  --button-primary-bg: #0F64B5;
+  --button-primary-hover-bg: #0a4a85;
+  --button-secondary-bg: #f2f8fd;
+  --button-secondary-hover-bg: #dceefb;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #FF6863;
+  --button-danger-hover-bg: #e5504c;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #b8d8f0;
+  --calendar-day-hover-bg: #f2f8fd;
+  --calendar-day-current-bg: #dceefb;
+  --calendar-day-current-border: #0F64B5;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fff0ee;
+  --calendar-day-weekend-border: #ffc8c6;
+  --calendar-day-holiday-rest-bg: #fff0ee;
+  --calendar-day-holiday-rest-border: #ffc8c6;
+  --calendar-day-holiday-work-bg: #dceefb;
+  --calendar-day-holiday-work-border: #a0ccf0;
+
+  --todo-item-bg: #f2f8fd;
+  --todo-item-border-left: #FF6863;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #88b8e0;
+
+  --preview-bg: #dceefb;
+  --preview-border: #b8d8f0;
+  --preview-text: #0a4a85;
+  --preview-hover-bg: #c0e0f8;
+  --preview-hover-border: #88b8e0;
+
+  --badge-rest-bg: #FF6863;
+  --badge-work-bg: #0F64B5;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(242, 248, 253, 0.95);
+  --loading-spinner-border: #b8d8f0;
+  --loading-spinner-border-top: #0F64B5;
+  --loading-text: #0a2e52;
+
+  --form-input-border: #b8d8f0;
+  --form-input-focus-border: #0F64B5;
+  --form-input-focus-shadow: rgba(15, 100, 181, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(15, 100, 181, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 100, 181, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 100, 181, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 100, 181, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+}
+
+/* ============ 落日海湾 (Sunset Bay) #EE6F44 + #0A3E68 ============ */
+.theme-sunset-bay {
+  --primary-color: #EE6F44;
+  --primary-light: #fde8de;
+  --primary-dark: #cc5530;
+  --accent-color: #0A3E68;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --info-color: #0A3E68;
+  --warning-color: #d97706;
+
+  --background-color: #fef6f2;
+  --card-background: #ffffff;
+  --text-primary: #0A3E68;
+  --text-secondary: #5a7a9e;
+  --border-color: #f0d0be;
+  --hover-color: #fde8de;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #f0d0be;
+  --other-month-bg: #fef6f2;
+  --other-month-border: #fde8de;
+  --other-month-text: #d4a888;
+
+  --button-primary-bg: #EE6F44;
+  --button-primary-hover-bg: #d45a32;
+  --button-secondary-bg: #fef6f2;
+  --button-secondary-hover-bg: #fde8de;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #f0d0be;
+  --calendar-day-hover-bg: #fef6f2;
+  --calendar-day-current-bg: #fde8de;
+  --calendar-day-current-border: #EE6F44;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #eef2fa;
+  --calendar-day-weekend-border: #c0d4ee;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #e0eaf6;
+  --calendar-day-holiday-work-border: #b0c8e8;
+
+  --todo-item-bg: #fef6f2;
+  --todo-item-border-left: #0A3E68;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #a8b8cc;
+
+  --preview-bg: #fde8de;
+  --preview-border: #f0d0be;
+  --preview-text: #cc5530;
+  --preview-hover-bg: #f8d4c0;
+  --preview-hover-border: #d4a888;
+
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #0A3E68;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(254, 246, 242, 0.95);
+  --loading-spinner-border: #f0d0be;
+  --loading-spinner-border-top: #EE6F44;
+  --loading-text: #0A3E68;
+
+  --form-input-border: #f0d0be;
+  --form-input-focus-border: #EE6F44;
+  --form-input-focus-shadow: rgba(238, 111, 68, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(10, 62, 104, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(10, 62, 104, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 62, 104, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 62, 104, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+}
+
+/* ============ 翡翠流金 (Emerald Gold) #0C6857 + #FFBF51 ============ */
+.theme-emerald-gold {
+  --primary-color: #0C6857;
+  --primary-light: #d5f0ec;
+  --primary-dark: #064a3e;
+  --accent-color: #FFBF51;
+
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --info-color: #0891b2;
+  --warning-color: #FFBF51;
+
+  --background-color: #f2faf8;
+  --card-background: #ffffff;
+  --text-primary: #062e26;
+  --text-secondary: #3a8a78;
+  --border-color: #a8d8cc;
+  --hover-color: #d5f0ec;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #a8d8cc;
+  --other-month-bg: #f2faf8;
+  --other-month-border: #d5f0ec;
+  --other-month-text: #78c0b0;
+
+  --button-primary-bg: #0C6857;
+  --button-primary-hover-bg: #064a3e;
+  --button-secondary-bg: #f2faf8;
+  --button-secondary-hover-bg: #d5f0ec;
+  --button-success-bg: #10b981;
+  --button-success-hover-bg: #059669;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #a8d8cc;
+  --calendar-day-hover-bg: #f2faf8;
+  --calendar-day-current-bg: #d5f0ec;
+  --calendar-day-current-border: #0C6857;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fef8e8;
+  --calendar-day-weekend-border: #f5e0a0;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #dceefb;
+  --calendar-day-holiday-work-border: #a0ccf0;
+
+  --todo-item-bg: #f2faf8;
+  --todo-item-border-left: #FFBF51;
   --todo-item-completed-bg: #ecfdf5;
   --todo-item-completed-border-left: #10b981;
-  --todo-item-completed-text: #5eead4;
+  --todo-item-completed-text: #78c0b0;
 
-  --preview-bg: #f0fdfa;
-  --preview-border: #99f6e4;
-  --preview-text: #0e7490;
-  --preview-hover-bg: #ccfbf1;
-  --preview-hover-border: #5eead4;
+  --preview-bg: #d5f0ec;
+  --preview-border: #a8d8cc;
+  --preview-text: #064a3e;
+  --preview-hover-bg: #b8e8e0;
+  --preview-hover-border: #78c0b0;
 
-  --badge-rest-bg: #f43f5e;
+  --badge-rest-bg: #ef4444;
   --badge-work-bg: #0891b2;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(240, 253, 250, 0.92);
-  --loading-spinner-border: #99f6e4;
-  --loading-spinner-border-top: #0891b2;
-  --loading-text: #134e4a;
+  --loading-overlay-bg: rgba(242, 250, 248, 0.95);
+  --loading-spinner-border: #a8d8cc;
+  --loading-spinner-border-top: #FFBF51;
+  --loading-text: #062e26;
 
-  --form-input-border: #99f6e4;
-  --form-input-focus-border: #0891b2;
-  --form-input-focus-shadow: rgba(8, 145, 178, 0.2);
+  --form-input-border: #a8d8cc;
+  --form-input-focus-border: #0C6857;
+  --form-input-focus-shadow: rgba(12, 104, 87, 0.2);
 
-  --shadow-sm: 0 1px 2px rgba(8, 145, 178, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(8, 145, 178, 0.08);
-  --shadow-lg: 0 10px 15px -3px rgba(8, 145, 178, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(8, 145, 178, 0.1);
+  --shadow-sm: 0 1px 2px rgba(12, 104, 87, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(12, 104, 87, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(12, 104, 87, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(12, 104, 87, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #1a1a1a;
 }
 
-/* ============ 抹茶森 - 自然文艺 ============ */
-/* 灵感来源: #594f4f #45ada8 #9de0ad #e5fcc2 自然绿调 */
-.green-theme {
-  --primary-color: #2d9f8f;
-  --primary-light: #d5f0ec;
-  --primary-dark: #1a7a6d;
+/* ============ 紫罗兰春 (Violet Spring) #8255FA + #95DD24 ============ */
+.theme-violet-spring {
+  --primary-color: #8255FA;
+  --primary-light: #ede5fd;
+  --primary-dark: #6330e0;
+  --accent-color: #6ab018;
 
-  --success-color: #45ada8;
-  --danger-color: #d95b43;
-  --info-color: #53777a;
-  --warning-color: #e97f02;
+  --success-color: #95DD24;
+  --danger-color: #ef4444;
+  --info-color: #6366f1;
+  --warning-color: #f59e0b;
 
-  --background-color: #f4f9f2;
+  --background-color: #f8f5ff;
   --card-background: #ffffff;
-  --text-primary: #2d3436;
-  --text-secondary: #594f4f;
-  --border-color: #c8e6c9;
-  --hover-color: #e8f5e9;
+  --text-primary: #2d1b6e;
+  --text-secondary: #7c6aaa;
+  --border-color: #d8c8f0;
+  --hover-color: #ede5fd;
 
   --current-month-bg: #ffffff;
-  --current-month-border: #c8e6c9;
-  --other-month-bg: #f4f9f2;
-  --other-month-border: #e0f0e0;
-  --other-month-text: #a5d6a7;
+  --current-month-border: #d8c8f0;
+  --other-month-bg: #f8f5ff;
+  --other-month-border: #ede5fd;
+  --other-month-text: #b8a0e0;
 
-  --button-primary-bg: #2d9f8f;
-  --button-primary-hover-bg: #1a7a6d;
-  --button-secondary-bg: #f4f9f2;
-  --button-secondary-hover-bg: #e0f0e0;
-  --button-success-bg: #45ada8;
-  --button-success-hover-bg: #3a9691;
-  --button-danger-bg: #d95b43;
-  --button-danger-hover-bg: #c04a34;
+  --button-primary-bg: #8255FA;
+  --button-primary-hover-bg: #6330e0;
+  --button-secondary-bg: #f8f5ff;
+  --button-secondary-hover-bg: #ede5fd;
+  --button-success-bg: #6ab018;
+  --button-success-hover-bg: #559010;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
 
   --calendar-day-bg: #ffffff;
-  --calendar-day-border: #c8e6c9;
-  --calendar-day-hover-bg: #f4f9f2;
-  --calendar-day-current-bg: #d5f0ec;
-  --calendar-day-current-border: #2d9f8f;
+  --calendar-day-border: #d8c8f0;
+  --calendar-day-hover-bg: #f8f5ff;
+  --calendar-day-current-bg: #ede5fd;
+  --calendar-day-current-border: #8255FA;
   --calendar-day-other-month-opacity: 0.5;
-  --calendar-day-weekend-bg: #fef9ee;
-  --calendar-day-weekend-border: #f5dfa8;
-  --calendar-day-holiday-rest-bg: #fde8e4;
-  --calendar-day-holiday-rest-border: #f0b8ac;
-  --calendar-day-holiday-work-bg: #e3f2fd;
-  --calendar-day-holiday-work-border: #90caf9;
+  --calendar-day-weekend-bg: #f0fde8;
+  --calendar-day-weekend-border: #c8e8a0;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #ede5fd;
+  --calendar-day-holiday-work-border: #c0a8f0;
 
-  --todo-item-bg: #f4f9f2;
-  --todo-item-border-left: #2d9f8f;
-  --todo-item-completed-bg: #f0faf0;
-  --todo-item-completed-border-left: #45ada8;
-  --todo-item-completed-text: #81c784;
+  --todo-item-bg: #f8f5ff;
+  --todo-item-border-left: #6ab018;
+  --todo-item-completed-bg: #f0fde8;
+  --todo-item-completed-border-left: #95DD24;
+  --todo-item-completed-text: #a898cc;
 
-  --preview-bg: #e8f5e9;
-  --preview-border: #c8e6c9;
-  --preview-text: #1a7a6d;
-  --preview-hover-bg: #d5f0ec;
-  --preview-hover-border: #a5d6a7;
+  --preview-bg: #ede5fd;
+  --preview-border: #d8c8f0;
+  --preview-text: #6330e0;
+  --preview-hover-bg: #ddd0f8;
+  --preview-hover-border: #b8a0e0;
 
-  --badge-rest-bg: #d95b43;
-  --badge-work-bg: #53777a;
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #8255FA;
   --badge-text: #ffffff;
 
-  --loading-overlay-bg: rgba(244, 249, 242, 0.92);
-  --loading-spinner-border: #c8e6c9;
-  --loading-spinner-border-top: #2d9f8f;
-  --loading-text: #2d3436;
+  --loading-overlay-bg: rgba(248, 245, 255, 0.95);
+  --loading-spinner-border: #d8c8f0;
+  --loading-spinner-border-top: #8255FA;
+  --loading-text: #2d1b6e;
 
-  --form-input-border: #c8e6c9;
-  --form-input-focus-border: #2d9f8f;
-  --form-input-focus-shadow: rgba(45, 159, 143, 0.2);
+  --form-input-border: #d8c8f0;
+  --form-input-focus-border: #8255FA;
+  --form-input-focus-shadow: rgba(130, 85, 250, 0.2);
 
-  --shadow-sm: 0 1px 2px rgba(45, 159, 143, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(45, 159, 143, 0.08);
-  --shadow-lg: 0 10px 15px -3px rgba(45, 159, 143, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(45, 159, 143, 0.1);
+  --shadow-sm: 0 1px 2px rgba(130, 85, 250, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(130, 85, 250, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(130, 85, 250, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(130, 85, 250, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
 }
 
-/* ============ 午夜蓝 - 商务沉稳 ============ */
-/* 灵感来源: #1b325f #9cc4e4 #3a89c9 专业商务蓝 */
-.dark-mode:root,
-.dark-theme {
+/* ============ 皇室金紫 (Royal Gold) #EED557 + #5F469A ============ */
+.theme-royal-gold {
+  --primary-color: #5F469A;
+  --primary-light: #e8e0f5;
+  --primary-dark: #443080;
+  --accent-color: #EED557;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --info-color: #6366f1;
+  --warning-color: #d97706;
+
+  --background-color: #f8f5ff;
+  --card-background: #ffffff;
+  --text-primary: #2d1b6e;
+  --text-secondary: #6a5a90;
+  --border-color: #d0c4e8;
+  --hover-color: #ede5fd;
+
+  --current-month-bg: #ffffff;
+  --current-month-border: #d0c4e8;
+  --other-month-bg: #f8f5ff;
+  --other-month-border: #e8e0f5;
+  --other-month-text: #a898cc;
+
+  --button-primary-bg: #5F469A;
+  --button-primary-hover-bg: #443080;
+  --button-secondary-bg: #f8f5ff;
+  --button-secondary-hover-bg: #ede5fd;
+  --button-success-bg: #22c55e;
+  --button-success-hover-bg: #16a34a;
+  --button-danger-bg: #ef4444;
+  --button-danger-hover-bg: #dc2626;
+
+  --calendar-day-bg: #ffffff;
+  --calendar-day-border: #d0c4e8;
+  --calendar-day-hover-bg: #f8f5ff;
+  --calendar-day-current-bg: #e8e0f5;
+  --calendar-day-current-border: #5F469A;
+  --calendar-day-other-month-opacity: 0.5;
+  --calendar-day-weekend-bg: #fef8e0;
+  --calendar-day-weekend-border: #f0e0a0;
+  --calendar-day-holiday-rest-bg: #fee2e2;
+  --calendar-day-holiday-rest-border: #fda4af;
+  --calendar-day-holiday-work-bg: #e8e0f5;
+  --calendar-day-holiday-work-border: #c0b0e0;
+
+  --todo-item-bg: #f8f5ff;
+  --todo-item-border-left: #EED557;
+  --todo-item-completed-bg: #ecfdf5;
+  --todo-item-completed-border-left: #22c55e;
+  --todo-item-completed-text: #a898cc;
+
+  --preview-bg: #e8e0f5;
+  --preview-border: #d0c4e8;
+  --preview-text: #443080;
+  --preview-hover-bg: #ddd0f0;
+  --preview-hover-border: #a898cc;
+
+  --badge-rest-bg: #ef4444;
+  --badge-work-bg: #5F469A;
+  --badge-text: #ffffff;
+
+  --loading-overlay-bg: rgba(248, 245, 255, 0.95);
+  --loading-spinner-border: #d0c4e8;
+  --loading-spinner-border-top: #EED557;
+  --loading-text: #2d1b6e;
+
+  --form-input-border: #d0c4e8;
+  --form-input-focus-border: #5F469A;
+  --form-input-focus-shadow: rgba(95, 70, 154, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(95, 70, 154, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(95, 70, 154, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(95, 70, 154, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(95, 70, 154, 0.12);
+
+  --on-primary: #ffffff;
+  --on-accent: #1a1a1a;
+}
+
+/* ============ 午夜深蓝 (Midnight Blue) - 深色主题 ============ */
+.theme-midnight-blue {
   --primary-color: #60a5fa;
   --primary-light: rgba(96, 165, 250, 0.12);
   --primary-dark: #3b82f6;
+  --accent-color: #a78bfa;
 
   --success-color: #34d399;
   --danger-color: #fb7185;
@@ -387,22 +885,14 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 
+  --on-primary: #ffffff;
+  --on-accent: #ffffff;
+
   color-scheme: dark;
 }
 
-/* 深色模式文本修正 */
-.dark-theme .calendar-day .day-number {
-  color: #e2e8f0;
-}
-.dark-theme .other-month .day-number {
-  color: #334155;
-}
-.dark-theme .current-day .day-number {
-  color: #60a5fa;
-}
-.dark-theme .holiday-rest-day .holiday-name {
-  color: #fb7185;
-}
-.dark-theme .holiday-work-day .holiday-name {
-  color: #a78bfa;
-}
+.theme-midnight-blue .calendar-day .day-number { color: #e2e8f0; }
+.theme-midnight-blue .other-month .day-number { color: #334155; }
+.theme-midnight-blue .current-day .day-number { color: #60a5fa; }
+.theme-midnight-blue .holiday-rest-day .holiday-name { color: #fb7185; }
+.theme-midnight-blue .holiday-work-day .holiday-name { color: #a78bfa; }

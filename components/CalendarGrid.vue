@@ -2,7 +2,7 @@
   <div class="calendar-grid">
     <div class="empty-corner"></div>
 
-    <div v-for="(day, index) in weekdays" :key="day" :class="['calendar-weekday', { 'weekend-header': index >= 5 }]">
+    <div v-for="(day, index) in weekdays" :key="day" :class="['calendar-weekday', { 'weekend-header': isWeekendHeader(index) }]">
       {{ day }}
     </div>
 
@@ -35,21 +35,30 @@
 </template>
 
 <script setup>
-// 注意：animation.css 已在 nuxt.config.ts 中全局引入，无需在此重复导入
 const props = defineProps({
   weekdays: { type: Array, required: true },
   calendarDays: { type: Array, required: true },
   weekNumbers: { type: Array, required: true },
   animationType: { type: String, required: true },
-});
+})
 
 const activeClass = computed(() =>
   props.animationType.includes('animate')
     ? 'animate__animated ' + props.animationType
     : props.animationType + '-enter-active'
-);
+)
 
-defineEmits(['openAddTodoPopup', 'openTodoActions']);
+// Weekend header highlight: depends on week start
+// If weekdays starts with '一', weekends are index 5,6
+// If weekdays starts with '日', weekends are index 0,6
+function isWeekendHeader(index) {
+  if (props.weekdays[0] === '日') {
+    return index === 0 || index === 6
+  }
+  return index >= 5
+}
+
+defineEmits(['openAddTodoPopup', 'openTodoActions'])
 </script>
 
 <style scoped>
@@ -59,7 +68,8 @@ defineEmits(['openAddTodoPopup', 'openTodoActions']);
   grid-template-rows: 36px repeat(5, 1fr);
   gap: 4px;
   flex: 1;
-  height: calc(100vh - 60px);
+  min-height: 0;
+  height: calc(100vh - 80px);
   padding: 0 2px;
   position: relative;
 }
@@ -77,7 +87,7 @@ defineEmits(['openAddTodoPopup', 'openTodoActions']);
   border-radius: 8px;
   color: var(--text-secondary);
   font-size: 15px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
   z-index: 10;
   position: relative;
 }
@@ -103,14 +113,27 @@ defineEmits(['openAddTodoPopup', 'openTodoActions']);
 @media (max-width: 768px) {
   .calendar-grid {
     gap: 2px;
-    grid-template-columns: 30px repeat(7, 1fr);
+    grid-template-columns: 24px repeat(7, 1fr);
+    height: calc(100vh - 60px);
   }
   .calendar-weekday {
-    font-size: 13px;
-    padding: 8px 0;
+    font-size: 12px;
+    padding: 6px 0;
+    border-radius: 6px;
   }
   .week-number {
-    font-size: 12px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-grid {
+    grid-template-columns: 0 repeat(7, 1fr);
+  }
+  .empty-corner,
+  .week-number {
+    display: none;
   }
 }
 </style>

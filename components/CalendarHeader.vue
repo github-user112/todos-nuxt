@@ -18,17 +18,17 @@
         📤 分享
       </NButton>
 
-      <div class="selector-group">
+      <div class="selector-group desktop-only">
         <NSelect
           :value="themeType"
           :options="themeOptions"
           size="small"
-          :style="{ width: '120px' }"
+          :style="{ width: '130px' }"
           @update:value="$emit('changeTheme', $event)"
         />
       </div>
 
-      <div class="selector-group">
+      <div class="selector-group desktop-only">
         <NSelect
           :value="animationType"
           :options="animationOptions"
@@ -38,7 +38,27 @@
         />
       </div>
 
-      <a href="mailto:gonesc@foxmail.com" class="contact-link" title="联系我">✉️</a>
+      <div class="selector-group desktop-only">
+        <NSelect
+          :value="weekStart"
+          :options="weekStartOptions"
+          size="small"
+          :style="{ width: '90px' }"
+          @update:value="$emit('changeWeekStart', $event)"
+        />
+      </div>
+
+      <div class="selector-group desktop-only">
+        <NSelect
+          :value="viewMode"
+          :options="viewModeOptions"
+          size="small"
+          :style="{ width: '120px' }"
+          @update:value="$emit('changeViewMode', $event)"
+        />
+      </div>
+
+      <a href="mailto:gonesc@foxmail.com" class="contact-link desktop-only" title="联系我">✉️</a>
     </div>
   </div>
 </template>
@@ -51,38 +71,23 @@ defineProps({
   currentMonth: { type: Number, required: true },
   animationType: { type: String, required: true },
   themeType: { type: String, required: true },
+  weekStart: { type: String, required: true },
+  viewMode: { type: String, required: true },
+  themeOptions: { type: Array, default: () => [] },
+  animationOptions: { type: Array, default: () => [] },
+  weekStartOptions: { type: Array, default: () => [] },
+  viewModeOptions: { type: Array, default: () => [] },
 })
 
-defineEmits(['prevMonth', 'nextMonth', 'goToToday', 'changeAnimation', 'changeTheme'])
+defineEmits(['prevMonth', 'nextMonth', 'goToToday', 'changeAnimation', 'changeTheme', 'changeWeekStart', 'changeViewMode'])
 
 const message = useMessage()
-
-const themeOptions = [
-  { label: '🔮 极光紫', value: 'default' },
-  { label: '🌅 落日珊瑚', value: 'classic' },
-  { label: '🌊 深海碧', value: 'orange' },
-  { label: '🍵 抹茶森', value: 'green' },
-  { label: '🌃 午夜蓝', value: 'dark' },
-]
-
-const animationOptions = [
-  { label: '🎬 向左滑动', value: 'slide-left' },
-  { label: '⬆️ 淡入上移', value: 'fade-up' },
-  { label: '🔍 缩放进入', value: 'zoom-in' },
-  { label: '🔄 翻转进入', value: 'flip' },
-  { label: '🌊 级联瀑布', value: 'cascade' },
-  { label: '🎲 随机', value: 'random' },
-  { label: '💥 弹跳', value: 'animate__bounce' },
-  { label: '🎉 抖动', value: 'animate__tada' },
-]
 
 const copyUrlToClipboard = () => {
   if (import.meta.client) {
     navigator.clipboard.writeText(window.location.href).then(() => {
       message.success('链接已复制到剪贴板')
-    }).catch((err) => {
-      console.error('复制失败:', err)
-    })
+    }).catch(console.error)
   }
 }
 </script>
@@ -101,23 +106,19 @@ const copyUrlToClipboard = () => {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
-
 .calendar-header:hover {
   box-shadow: var(--shadow-lg);
 }
-
 .header-left {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .header-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .calendar-title {
   margin: 0;
   font-size: 1.4rem;
@@ -127,21 +128,9 @@ const copyUrlToClipboard = () => {
   min-width: 160px;
   text-align: center;
 }
-
-.today-btn {
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.share-btn {
-  font-weight: 500;
-}
-
-.selector-group {
-  display: flex;
-  align-items: center;
-}
-
+.today-btn { font-weight: 600; letter-spacing: 1px; }
+.share-btn { font-weight: 500; }
+.selector-group { display: flex; align-items: center; }
 .contact-link {
   font-size: 18px;
   text-decoration: none;
@@ -150,7 +139,6 @@ const copyUrlToClipboard = () => {
   transition: all 0.2s;
   line-height: 1;
 }
-
 .contact-link:hover {
   background: var(--hover-color);
   transform: scale(1.1);
@@ -159,32 +147,13 @@ const copyUrlToClipboard = () => {
 @media (max-width: 768px) {
   .calendar-header {
     padding: 8px 12px;
+    border-radius: 12px;
     flex-wrap: wrap;
     gap: 8px;
-    border-radius: 12px;
   }
-  .header-left {
-    flex: 1;
-    justify-content: center;
-  }
-  .header-right {
-    flex: 1;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .calendar-title {
-    font-size: 1.1rem;
-    min-width: auto;
-  }
-  .selector-group {
-    margin: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .calendar-header {
-    flex-direction: column;
-    gap: 6px;
-  }
+  .header-left { flex: 1; justify-content: center; gap: 4px; }
+  .header-right { flex: 1; justify-content: center; gap: 6px; }
+  .calendar-title { font-size: 1.1rem; min-width: auto; }
+  .desktop-only { display: none; }
 }
 </style>
