@@ -279,7 +279,7 @@ const calendarDays = computed(() => {
     startDate = new Date(firstOfMonth)
     startDate.setDate(startDate.getDate() - offset)
   } else {
-    // Focus today: today's week + 2 weeks before + 2 weeks after = 5 weeks
+    // Focus today: today's week + 1 week before + 3 weeks after = 5 weeks
     const gridDate = new Date(currentDate.value)
     gridDate.setHours(0, 0, 0, 0)
     const dow = gridDate.getDay()
@@ -287,9 +287,9 @@ const calendarDays = computed(() => {
     const thisWeekStart = new Date(gridDate)
     thisWeekStart.setDate(gridDate.getDate() - offsetToStart)
     thisWeekStart.setHours(0, 0, 0, 0)
-    // 2 weeks before current week
+    // 1 week before current week
     startDate = new Date(thisWeekStart)
-    startDate.setDate(startDate.getDate() - 14)
+    startDate.setDate(startDate.getDate() - 7)
   }
   startDate.setHours(0, 0, 0, 0)
 
