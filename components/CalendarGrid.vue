@@ -6,14 +6,14 @@
       {{ day }}
     </div>
 
-    <template v-for="(week, weekIndex) in 5" :key="`week-number-${weekIndex}`">
+    <template v-for="(week, weekIndex) in totalWeeks" :key="`week-number-${weekIndex}`">
       <div class="week-number" :style="{ gridRow: weekIndex + 2 }">
         {{ weekNumbers[weekIndex] }}
       </div>
     </template>
 
     <TransitionGroup :name="animationType ? animationType : 'default'" :enter-active-class="activeClass">
-      <template v-for="(week, weekIndex) in 5" :key="`week-${weekIndex}`">
+      <template v-for="(week, weekIndex) in totalWeeks" :key="`week-${weekIndex}`">
         <CalendarDay
           v-for="(day, dayIndex) in calendarDays.slice(weekIndex * 7, (weekIndex + 1) * 7)"
           :key="`${day.dateStr}-${day.isOtherMonth}`"
@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   weekdays: { type: Array, required: true },
   calendarDays: { type: Array, required: true },
@@ -42,19 +44,16 @@ const props = defineProps({
   animationType: { type: String, required: true },
 })
 
+const totalWeeks = computed(() => Math.ceil(props.calendarDays.length / 7))
+
 const activeClass = computed(() =>
   props.animationType.includes('animate')
     ? 'animate__animated ' + props.animationType
     : props.animationType + '-enter-active'
 )
 
-// Weekend header highlight: depends on week start
-// If weekdays starts with '一', weekends are index 5,6
-// If weekdays starts with '日', weekends are index 0,6
 function isWeekendHeader(index) {
-  if (props.weekdays[0] === '日') {
-    return index === 0 || index === 6
-  }
+  if (props.weekdays[0] === '日') return index === 0 || index === 6
   return index >= 5
 }
 
@@ -65,7 +64,7 @@ defineEmits(['openAddTodoPopup', 'openTodoActions'])
 .calendar-grid {
   display: grid;
   grid-template-columns: 40px repeat(7, 1fr);
-  grid-template-rows: 36px repeat(5, 1fr);
+  grid-template-rows: 36px repeat(6, 1fr);
   gap: 4px;
   flex: 1;
   min-height: 0;
@@ -93,8 +92,8 @@ defineEmits(['openAddTodoPopup', 'openTodoActions'])
 }
 
 .weekend-header {
-  color: var(--danger-color);
-  background: var(--calendar-day-holiday-rest-bg);
+  color: var(--weekday-header-weekend-color);
+  background: var(--weekday-header-weekend-bg);
 }
 
 .week-number {
@@ -114,7 +113,8 @@ defineEmits(['openAddTodoPopup', 'openTodoActions'])
   .calendar-grid {
     gap: 2px;
     grid-template-columns: 24px repeat(7, 1fr);
-    height: calc(100vh - 60px);
+    grid-template-rows: 30px repeat(6, 1fr);
+    height: calc(100vh - 56px);
   }
   .calendar-weekday {
     font-size: 12px;

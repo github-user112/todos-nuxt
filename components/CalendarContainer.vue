@@ -184,7 +184,7 @@ const themeType = ref(savedTheme || 'default')
 const savedWeekStart = import.meta.client ? localStorage.getItem('calendar_week_start') : null
 const weekStart = ref(savedWeekStart || 'monday') // 'monday' | 'sunday'
 const savedViewMode = import.meta.client ? localStorage.getItem('calendar_view_mode') : null
-const viewMode = ref(savedViewMode || 'full-week') // 'full-week' | 'focus-today'
+const viewMode = ref(savedViewMode || 'focus-today') // 'focus-today' | 'full-month'
 const showDrawer = ref(false)
 
 const themeOptions = ALL_THEMES.map(t => ({ label: t.label, value: t.key }))
@@ -203,8 +203,8 @@ const weekStartOptions = [
   { label: '周日', value: 'sunday' },
 ]
 const viewModeOptions = [
-  { label: '完整周视图', value: 'full-week' },
   { label: '聚焦今日', value: 'focus-today' },
+  { label: '完整月视图', value: 'full-month' },
 ]
 
 // --- State ---
@@ -243,42 +243,38 @@ let touchStartX = 0
 let touchStartY = 0
 
 // --- Calendar days computation ---
+const ROWS = 6 // fixed 6 rows for consistent height
 const calendarDays = computed(() => {
-  const gridDate = new Date(currentDate.value)
-  gridDate.setHours(0, 0, 0, 0)
-
   const realToday = new Date()
   realToday.setHours(0, 0, 0, 0)
 
   const isMonday = weekStart.value === 'monday'
-
-  // Find the start of the week containing gridDate
-  const dow = gridDate.getDay() // 0=Sun
-  let offsetToStart
-  if (isMonday) {
-    offsetToStart = dow === 0 ? 6 : dow - 1
-  } else {
-    offsetToStart = dow
-  }
-  const weekStart_date = new Date(gridDate)
-  weekStart_date.setDate(gridDate.getDate() - offsetToStart)
-  weekStart_date.setHours(0, 0, 0, 0)
+  const totalDays = ROWS * 7
 
   let startDate
-  let totalDays
 
-  if (viewMode.value === 'focus-today') {
-    // Focus today: show today in center of 5 rows
-    // Go back 2 weeks from today's week start
-    startDate = new Date(weekStart_date)
-    startDate.setDate(startDate.getDate() - 14)
-    totalDays = 35
+  if (viewMode.value === 'full-month') {
+    // Full month: start from 1st of current month, fill full weeks
+    const firstOfMonth = new Date(currentYear.value, currentMonth.value, 1)
+    firstOfMonth.setHours(0, 0, 0, 0)
+    const dow = firstOfMonth.getDay()
+    const offset = isMonday ? (dow === 0 ? 6 : dow - 1) : dow
+    startDate = new Date(firstOfMonth)
+    startDate.setDate(startDate.getDate() - offset)
   } else {
-    // Full week: go back 1 week from current week start
-    startDate = new Date(weekStart_date)
+    // Focus today (full week): current week centered with surrounding weeks
+    const gridDate = new Date(currentDate.value)
+    gridDate.setHours(0, 0, 0, 0)
+    const dow = gridDate.getDay()
+    const offsetToStart = isMonday ? (dow === 0 ? 6 : dow - 1) : dow
+    const thisWeekStart = new Date(gridDate)
+    thisWeekStart.setDate(gridDate.getDate() - offsetToStart)
+    thisWeekStart.setHours(0, 0, 0, 0)
+    // Go back 1 week so current week is row 1-2
+    startDate = new Date(thisWeekStart)
     startDate.setDate(startDate.getDate() - 7)
-    totalDays = 35
   }
+  startDate.setHours(0, 0, 0, 0)
 
   const result = []
   for (let i = 0; i < totalDays; i++) {
@@ -295,15 +291,6 @@ const calendarDays = computed(() => {
       date.getDate() === realToday.getDate() &&
       date.getMonth() === realToday.getMonth() &&
       date.getFullYear() === realToday.getFullYear()
-
-    // Weekend check depends on weekStart
-    const dayOfWeek = date.getDay()
-    let isWeekendDay
-    if (isMonday) {
-      isWeekendDay = dayOfWeek === 0 || dayOfWeek === 6
-    } else {
-      isWeekendDay = dayOfWeek === 0 || dayOfWeek === 6
-    }
 
     result.push({
       dayNumber,
@@ -322,7 +309,8 @@ const calendarDays = computed(() => {
 // Week numbers
 const weekNumbers = computed(() => {
   const weeks = []
-  for (let i = 0; i < 5; i++) {
+  const totalWeeks = ROWS
+  for (let i = 0; i < totalWeeks; i++) {
     const firstDayOfWeek = new Date(calendarDays.value[i * 7].date)
     const dayOfWeek = firstDayOfWeek.getDay()
     const isMonday = weekStart.value === 'monday'

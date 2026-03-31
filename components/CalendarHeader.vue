@@ -153,7 +153,7 @@ const copyUrlToClipboard = () => {
   }
   .header-left { flex: 1; justify-content: center; gap: 4px; }
   .header-right { flex: 1; justify-content: center; gap: 6px; }
-  .calendar-title { font-size: 1.1rem; min-width: auto; }
+  .calendar-title { font-size: 1.1rem; min-width: auto; white-space: nowrap; }
   .desktop-only { display: none; }
 }
 </style>
