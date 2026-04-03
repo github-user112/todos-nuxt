@@ -173,6 +173,7 @@ const handleCompleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
       })
       if (result.success) {
         todo.completed = !todo.completed
+        todos.value = [...todos.value]
         return true
       }
     } else {
@@ -188,6 +189,7 @@ const handleCompleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
         })
         if (result.success) {
           todo.completed = !todo.completed
+          todos.value = [...todos.value]
           return true
         }
       } else {

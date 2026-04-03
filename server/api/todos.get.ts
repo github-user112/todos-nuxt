@@ -12,14 +12,15 @@ export default defineEventHandler(async (event) => {
   const DB = getDB(event);
 
   try {
-    // 获取所有未过期的待办（包括很久之前创建的重复事件）
+    // 查询指定日期范围内的待办事项（与 worker.js 逻辑一致）
     const todosResult = await DB.prepare(`
-      SELECT id, text, date, repeat_type, repeat_interval, end_date, completed, user_id
-      FROM todos
-      WHERE user_id = ?
-        AND (end_date IS NULL OR end_date >= ?)
-      ORDER BY date
-    `).bind(userId, startDate).all();
+      SELECT * FROM todos
+      WHERE user_id = ? AND (
+        (date BETWEEN ? AND ?) OR
+        (repeat_type != 'none' AND date <= ? AND (end_date IS NULL OR end_date >= ?))
+      ) AND (end_date IS NULL OR end_date >= ?)
+      ORDER BY date, repeat_type, repeat_interval
+    `).bind(userId, startDate, endDate, endDate, startDate, startDate).all();
 
     // 获取查询范围内的已完成实例
     const completedInstancesResult = await DB.prepare(`
