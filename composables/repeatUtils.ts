@@ -33,48 +33,47 @@ export function shouldShowRepeatingTodo(
 }
 
 function shouldShowDailyInterval(todoDate: Date, currentDate: Date, interval: number): boolean {
-  const dayDiff = Math.floor(
-    (currentDate.getTime() - todoDate.getTime()) / (1000 * 60 * 60 * 24)
-  );
+  // 归一化时间，只比较日期部分
+  const start = new Date(todoDate.getFullYear(), todoDate.getMonth(), todoDate.getDate());
+  const current = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+  const dayDiff = Math.floor((current.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
   return dayDiff >= 0 && dayDiff % interval === 0;
 }
 
 function shouldShowWeeklyInterval(todoDate: Date, currentDate: Date, interval: number): boolean {
-  if (todoDate.getDay() !== currentDate.getDay()) return false;
-  const weekDiff = Math.floor(
-    (currentDate.getTime() - todoDate.getTime()) / (1000 * 60 * 60 * 24 * 7)
-  );
+  const start = new Date(todoDate.getFullYear(), todoDate.getMonth(), todoDate.getDate());
+  const current = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+  if (start.getDay() !== current.getDay()) return false;
+  const weekDiff = Math.floor((current.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 7));
   return weekDiff >= 0 && weekDiff % interval === 0;
 }
 
 function shouldShowMonthlyInterval(todoDate: Date, currentDate: Date, interval: number): boolean {
-  const adjustedCurrentDate = adjustMonthEndDate(
-    todoDate,
-    currentDate.getFullYear(),
-    currentDate.getMonth()
-  );
-  if (adjustedCurrentDate.getDate() !== currentDate.getDate()) return false;
-  const monthDiff =
-    (currentDate.getFullYear() - todoDate.getFullYear()) * 12 +
-    (currentDate.getMonth() - todoDate.getMonth());
+  const start = new Date(todoDate.getFullYear(), todoDate.getMonth(), todoDate.getDate());
+  const current = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+  const adjustedCurrentDate = adjustMonthEndDate(start, current.getFullYear(), current.getMonth());
+  if (adjustedCurrentDate.getDate() !== current.getDate()) return false;
+  const monthDiff = (current.getFullYear() - start.getFullYear()) * 12 + (current.getMonth() - start.getMonth());
   return monthDiff >= 0 && monthDiff % interval === 0;
 }
 
 function shouldShowYearlyInterval(todoDate: Date, currentDate: Date, interval: number): boolean {
-  if (todoDate.getMonth() !== currentDate.getMonth()) return false;
-  const todoDay = todoDate.getDate();
-  const currentDay = currentDate.getDate();
-  if (todoDay === 29 && todoDate.getMonth() === 1) {
-    const isCurrentLeapYear = isLeapYear(currentDate.getFullYear());
+  const start = new Date(todoDate.getFullYear(), todoDate.getMonth(), todoDate.getDate());
+  const current = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+  if (start.getMonth() !== current.getMonth()) return false;
+  const startDay = start.getDate();
+  const currentDay = current.getDate();
+  if (startDay === 29 && start.getMonth() === 1) {
+    const isCurrentLeapYear = isLeapYear(current.getFullYear());
     if (!isCurrentLeapYear && currentDay === 28) {
-      // allow
-    } else if (currentDay !== todoDay) {
+      // 平年允许 2 月 29 日的任务显示在 2 月 28 日
+    } else if (currentDay !== startDay) {
       return false;
     }
-  } else if (todoDay !== currentDay) {
+  } else if (startDay !== currentDay) {
     return false;
   }
-  const yearDiff = currentDate.getFullYear() - todoDate.getFullYear();
+  const yearDiff = current.getFullYear() - start.getFullYear();
   return yearDiff >= 0 && yearDiff % interval === 0;
 }
 

@@ -360,13 +360,7 @@ function getTodosForDate(date, dateStr) {
       return
     }
 
-    // 重复待办：next_date 匹配，或者通过 shouldShowRepeatingTodo 计算
-    if (displayDate === dateStr) {
-      const isCompleted = isInstanceCompleted(todo.id, dateStr)
-      result.push({ ...todo, displayDate, isCompleted })
-      return
-    }
-
+    // 重复待办：统一通过 shouldShowRepeatingTodo 计算每个实例
     const originalDate = new Date(todo.date)
     const currentDateObj = new Date(dateStr)
     const interval = todo.repeat_interval || 1

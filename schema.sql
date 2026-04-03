@@ -36,3 +36,4 @@ CREATE INDEX IF NOT EXISTS idx_todos_user_date ON todos (user_id, date);
 CREATE INDEX IF NOT EXISTS idx_todos_repeat_type_interval ON todos (repeat_type, repeat_interval);
 CREATE INDEX IF NOT EXISTS idx_completed_instances_user_todo_date ON completed_instances (user_id, todo_id, date);
 CREATE INDEX IF NOT EXISTS idx_deleted_instances_user_todo_date ON deleted_instances (user_id, todo_id, date);
+

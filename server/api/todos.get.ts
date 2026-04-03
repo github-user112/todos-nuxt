@@ -10,17 +10,19 @@ export default defineEventHandler(async (event) => {
   const endDate = getQuery(event).endDate as string || '2099-12-31';
 
   const DB = getDB(event);
-
+  console.log(userId, startDate, endDate);
   try {
-    // 查询指定日期范围内的待办事项（与 worker.js 逻辑一致）
+    // 查询指定日期范围内的待办事项
+    // 对于重复任务，即使主表 completed = 1，只要用户手动取消了某些实例的完成状态，
+    // 我们依然需要返回该任务，前端会根据 completed_instances 表来判断具体某天的完成状态。
     const todosResult = await DB.prepare(`
       SELECT * FROM todos
       WHERE user_id = ? AND (
         (date BETWEEN ? AND ?) OR
         (repeat_type != 'none' AND date <= ? AND (end_date IS NULL OR end_date >= ?))
-      ) AND (end_date IS NULL OR end_date >= ?)
+      )
       ORDER BY date, repeat_type, repeat_interval
-    `).bind(userId, startDate, endDate, endDate, startDate, startDate).all();
+    `).bind(userId, startDate, endDate, endDate, startDate).all();
 
     // 获取查询范围内的已完成实例
     const completedInstancesResult = await DB.prepare(`

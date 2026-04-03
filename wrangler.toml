@@ -6,5 +6,4 @@ pages_build_output_dir = "dist"
 # ⚠️ 请先在 Cloudflare 控制台创建 D1 数据库，然后填入下面的 database_id
 [[d1_databases]]
 binding = "DB"
-database_name = "calendar_db"
-database_id = "6dd2ed1b-2c5d-4dcf-9a78-b8b14e828516"
+database_name = "YOUR_DB_NAME"

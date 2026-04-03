@@ -24,7 +24,8 @@ export default defineEventHandler(async (event) => {
       return { success: true };
     }
 
-    // 检查是否已存在完成记录
+    // 处理已完成实例的记录（用于重复任务实例的完成/取消状态切换）
+    // 注意：重复任务实例的完成状态以 completed_instances 表为准
     const existingInstance = await DB.prepare(`
       SELECT * FROM completed_instances
       WHERE todo_id = ? AND date = ? AND user_id = ?
@@ -33,18 +34,16 @@ export default defineEventHandler(async (event) => {
     let completed = false;
 
     if (existingInstance) {
-      // 取消完成
+      // 取消完成：删除实例记录
       await DB.prepare(`
         DELETE FROM completed_instances WHERE todo_id = ? AND date = ? AND user_id = ?
       `).bind(body.todoId, body.date, userId).run();
     } else {
-      // 标记完成
+      // 标记完成：插入实例记录
       await DB.prepare(`
         INSERT INTO completed_instances (todo_id, date, user_id) VALUES (?, ?, ?)
       `).bind(body.todoId, body.date, userId).run();
       completed = true;
-
-
     }
 
     return { success: true, completed };

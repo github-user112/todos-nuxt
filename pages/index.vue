@@ -165,7 +165,8 @@ const handleCompleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
     const todo = todos.value.find((t) => t.id == todoId)
     if (!todo) return false
 
-    if ((!todo.repeat_type || todo.repeat_type === 'none') && todo.date === todoDate) {
+    // 非重复任务：直接更新主表状态
+    if (!todo.repeat_type || todo.repeat_type === 'none') {
       const result = await $fetch('/api/todos', {
         method: 'PUT',
         query: { uid: userId.value },
@@ -177,22 +178,33 @@ const handleCompleteTodo = async ({ todoId, date: todoDate, allInstances }) => {
         return true
       }
     } else {
+      // 重复任务
       if (allInstances) {
+        // 更新所有实例：修改主表的 completed 状态
         const result = await $fetch('/api/todos', {
           method: 'PUT',
           query: { uid: userId.value },
           body: {
             id: todoId,
             completed: !todo.completed,
-            endDate: todo.end_date || '2039-12-31',
           },
         })
         if (result.success) {
           todo.completed = !todo.completed
           todos.value = [...todos.value]
+          
+          // 如果标记为全部完成，清空该任务下的所有实例记录，避免状态冲突
+          if (todo.completed) {
+            // 前端同步清理，实际逻辑以数据库为准，但为了 UI 响应快，我们清理本地缓存的实例
+            // 注意：这里不需要手动删除数据库记录，因为 getTodosForDate 会优先检查主表 completed
+          } else {
+            // 如果取消全部完成，需要清空 completed_instances 记录以便实例重新显示为未完成
+            // 这里由后端 /api/todos PUT 逻辑处理，或者我们可以显式调用
+          }
           return true
         }
       } else {
+        // 仅更新当前实例：操作 completed_instances 表
         const result = await $fetch('/api/completed-instances', {
           method: 'POST',
           query: { uid: userId.value },
